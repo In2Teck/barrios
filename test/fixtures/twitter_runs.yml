@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  run_url: MyString
+  miles: 1.5
+  pace: 1.5
+  accounted: false
+  user_id: 1
+
+two:
+  run_url: MyString
+  miles: 1.5
+  pace: 1.5
+  accounted: false
+  user_id: 1

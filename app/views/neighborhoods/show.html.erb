@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @neighborhood.name %>
+</p>
+
+<p>
+  <b>Picture url thumb:</b>
+  <%= @neighborhood.picture_url_thumb %>
+</p>
+
+<p>
+  <b>Picture url normal:</b>
+  <%= @neighborhood.picture_url_normal %>
+</p>
+
+<p>
+  <b>Picture url big:</b>
+  <%= @neighborhood.picture_url_big %>
+</p>
+
+
+<%= link_to 'Edit', edit_neighborhood_path(@neighborhood) %> |
+<%= link_to 'Back', neighborhoods_path %>

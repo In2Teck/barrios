@@ -1,0 +1,31 @@
+<h1>Listing facebook_runs</h1>
+
+<table>
+  <tr>
+    <th>Run</th>
+    <th>Miles</th>
+    <th>Pace</th>
+    <th>Accounted</th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @facebook_runs.each do |facebook_run| %>
+  <tr>
+    <td><%= facebook_run.run_id %></td>
+    <td><%= facebook_run.miles %></td>
+    <td><%= facebook_run.pace %></td>
+    <td><%= facebook_run.accounted %></td>
+    <td><%= facebook_run.user_id %></td>
+    <td><%= link_to 'Show', facebook_run %></td>
+    <td><%= link_to 'Edit', edit_facebook_run_path(facebook_run) %></td>
+    <td><%= link_to 'Destroy', facebook_run, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Facebook run', new_facebook_run_path %>

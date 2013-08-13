@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Miles:</b>
+  <%= @run.miles %>
+</p>
+
+<p>
+  <b>Pace:</b>
+  <%= @run.pace %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @run.date %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @run.user_id %>
+</p>
+
+<p>
+  <b>Facebook run:</b>
+  <%= @run.facebook_run_id %>
+</p>
+
+<p>
+  <b>Twitter run:</b>
+  <%= @run.twitter_run_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_run_path(@run) %> |
+<%= link_to 'Back', runs_path %>

@@ -1,0 +1,29 @@
+<h1>Listing neighborhoods</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Picture url thumb</th>
+    <th>Picture url normal</th>
+    <th>Picture url big</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @neighborhoods.each do |neighborhood| %>
+  <tr>
+    <td><%= neighborhood.name %></td>
+    <td><%= neighborhood.picture_url_thumb %></td>
+    <td><%= neighborhood.picture_url_normal %></td>
+    <td><%= neighborhood.picture_url_big %></td>
+    <td><%= link_to 'Show', neighborhood %></td>
+    <td><%= link_to 'Edit', edit_neighborhood_path(neighborhood) %></td>
+    <td><%= link_to 'Destroy', neighborhood, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Neighborhood', new_neighborhood_path %>

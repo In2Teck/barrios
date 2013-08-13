@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  miles: 1.5
+  pace: 1.5
+  date: 1
+  user_id: 1
+  facebook_run_id: MyString
+  twitter_run_id: MyString
+
+two:
+  miles: 1.5
+  pace: 1.5
+  date: 1
+  user_id: 1
+  facebook_run_id: MyString
+  twitter_run_id: MyString
