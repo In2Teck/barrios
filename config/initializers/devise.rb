@@ -215,7 +215,7 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
   require "omniauth-facebook"
-  config.omniauth :facebook, ENV['FACEBOOK_APP_KEY'], ENV['FACEBOOK_APP_SECRET'], {:scope =>'publish_stream,email,user_actions:nikeapp', :client_options => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}
+  config.omniauth :facebook, ENV['FACEBOOK_APP_KEY'], ENV['FACEBOOK_APP_SECRET'], {:scope =>'publish_stream,email,user_birthday,user_actions:nikeapp', :client_options => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}
   config.omniauth :twitter, ENV['TWITTER_CONSUMER_KEY'], ENV['TWITTER_CONSUMER_SECRET']
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

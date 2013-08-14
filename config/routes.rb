@@ -16,13 +16,21 @@ TorreCentenario::Application.routes.draw do
   devise_for :users, :controllers => {:omniauth_callbacks => "users/omniauth_callbacks"}
 
   devise_scope :user do
+    #TODO: PROTECT SIGNIN AND SIGNUP DIRECT LINKS
 	  get 'logout', :to => "devise/sessions#destroy"
-	  get 'signin', :to => "devise/sessions#new"
-	  get 'signup', :to => "devise/registrations#new"
+	  #get 'signin', :to => "devise/sessions#new"
+	  #get 'signup', :to => "devise/registrations#new"
   end
 
   resources :users
 
+  match 'hood_select' => 'display#hood_select', :as => :hood_select
+
+  match 'twitter_share' => 'display#twitter_share', :as => :twitter_share
+
+  match 'profile' => 'display#profile', :as => :profile
+
+  match 'hood_detail' => 'display#hood_detail', :as => :hood_detail
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -4,7 +4,9 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 		@user = User.find_for_facebook_oauth(auth_hash, current_user)
 		if @user.persisted?
 			flash[:notice] = I18n.t "devise.omniauth_callbacks.success", :kind => "Facebook"
-			sign_in_and_redirect @user, :event => :authentication
+			#sign_in_and_redirect @user, :event => :authentication
+      sign_in @user
+      redirect_to :hood_select
 		else
 			session["devise.facebook_data"] = auth_hash.except("extra")
 			redirect_to signup_url(@user)
@@ -15,7 +17,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 		@user = User.find_for_twitter_oauth(auth_hash, current_user)
     logger.info @user.to_yaml
     # REDIRECT A HOMEPAGE DE USUARIO
-    redirect_to runs_url
+    redirect_to :profile
 	end
 
 	def auth_hash

@@ -10,6 +10,9 @@ gem 'devise'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'cancan'
+gem 'rest-client'
+gem 'rest-graph'
+gem 'twitter'
 
 # Gems used only for assets and not required
 # in production environments by default.
