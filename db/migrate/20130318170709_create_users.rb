@@ -7,7 +7,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :last_name
       t.text :facebook_hash
       t.text :twitter_hash
-      t.string :first_twitt_id
+      t.string :last_twitt_id
 
       t.timestamps
     end

@@ -1,4 +1,3 @@
 class Run < ActiveRecord::Base
-  attr_accessible :date, :facebook_run_id, :miles, :pace, :twitter_run_id, :user_id
-  belongs_to :user
+  attr_accessible :accounted, :kilometers, :pace, :published_date, :run_id, :run_url, :start_date, :user_id
 end

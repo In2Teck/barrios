@@ -11,17 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130813045626) do
-
-  create_table "facebook_runs", :force => true do |t|
-    t.integer  "run_id"
-    t.float    "miles"
-    t.float    "pace"
-    t.boolean  "accounted"
-    t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
+ActiveRecord::Schema.define(:version => 20130815080152) do
 
   create_table "neighborhoods", :force => true do |t|
     t.string   "name"
@@ -44,24 +34,16 @@ ActiveRecord::Schema.define(:version => 20130813045626) do
   end
 
   create_table "runs", :force => true do |t|
-    t.float    "miles"
-    t.float    "pace"
-    t.integer  "date"
     t.integer  "user_id"
-    t.string   "facebook_run_id"
-    t.string   "twitter_run_id"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-  end
-
-  create_table "twitter_runs", :force => true do |t|
+    t.string   "run_id"
     t.string   "run_url"
-    t.float    "miles"
+    t.float    "kilometers"
     t.float    "pace"
+    t.datetime "published_date"
+    t.datetime "start_date"
     t.boolean  "accounted"
-    t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "users", :force => true do |t|
@@ -69,6 +51,9 @@ ActiveRecord::Schema.define(:version => 20130813045626) do
     t.string   "twitter_id"
     t.string   "first_name"
     t.string   "last_name"
+    t.text     "facebook_hash"
+    t.text     "twitter_hash"
+    t.string   "first_twitt_id"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "email",                  :default => "", :null => false
@@ -85,6 +70,7 @@ ActiveRecord::Schema.define(:version => 20130813045626) do
     t.string   "oauth_token"
     t.string   "oauth_token_secret"
     t.integer  "barrio_id"
+    t.datetime "last_facebook_run"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

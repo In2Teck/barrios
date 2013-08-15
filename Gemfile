@@ -13,6 +13,7 @@ gem 'cancan'
 gem 'rest-client'
 gem 'rest-graph'
 gem 'twitter'
+gem 'open_uri_redirections'
 
 # Gems used only for assets and not required
 # in production environments by default.

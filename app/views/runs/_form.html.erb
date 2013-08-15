@@ -12,28 +12,36 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :miles %><br />
-    <%= f.text_field :miles %>
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :run_id %><br />
+    <%= f.text_field :run_id %>
+  </div>
+  <div class="field">
+    <%= f.label :run_url %><br />
+    <%= f.text_field :run_url %>
+  </div>
+  <div class="field">
+    <%= f.label :kilometers %><br />
+    <%= f.text_field :kilometers %>
   </div>
   <div class="field">
     <%= f.label :pace %><br />
     <%= f.text_field :pace %>
   </div>
   <div class="field">
-    <%= f.label :date %><br />
-    <%= f.number_field :date %>
+    <%= f.label :published_date %><br />
+    <%= f.datetime_select :published_date %>
   </div>
   <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.number_field :user_id %>
+    <%= f.label :start_date %><br />
+    <%= f.datetime_select :start_date %>
   </div>
   <div class="field">
-    <%= f.label :facebook_run_id %><br />
-    <%= f.text_field :facebook_run_id %>
-  </div>
-  <div class="field">
-    <%= f.label :twitter_run_id %><br />
-    <%= f.text_field :twitter_run_id %>
+    <%= f.label :accounted %><br />
+    <%= f.check_box :accounted %>
   </div>
   <div class="actions">
     <%= f.submit %>

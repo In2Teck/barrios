@@ -18,7 +18,7 @@ class RunsControllerTest < ActionController::TestCase
 
   test "should create run" do
     assert_difference('Run.count') do
-      post :create, run: { date: @run.date, facebook_run_id: @run.facebook_run_id, miles: @run.miles, pace: @run.pace, twitter_run_id: @run.twitter_run_id, user_id: @run.user_id }
+      post :create, run: { accounted: @run.accounted, kilometers: @run.kilometers, pace: @run.pace, published_date: @run.published_date, run_id: @run.run_id, run_url: @run.run_url, start_date: @run.start_date, user_id: @run.user_id }
     end
 
     assert_redirected_to run_path(assigns(:run))
@@ -35,7 +35,7 @@ class RunsControllerTest < ActionController::TestCase
   end
 
   test "should update run" do
-    put :update, id: @run, run: { date: @run.date, facebook_run_id: @run.facebook_run_id, miles: @run.miles, pace: @run.pace, twitter_run_id: @run.twitter_run_id, user_id: @run.user_id }
+    put :update, id: @run, run: { accounted: @run.accounted, kilometers: @run.kilometers, pace: @run.pace, published_date: @run.published_date, run_id: @run.run_id, run_url: @run.run_url, start_date: @run.start_date, user_id: @run.user_id }
     assert_redirected_to run_path(assigns(:run))
   end
 

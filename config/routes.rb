@@ -1,15 +1,7 @@
 TorreCentenario::Application.routes.draw do
-  resources :neighborhoods
-
-
-  resources :twitter_runs
-
-
-  resources :facebook_runs
-
-
   resources :runs
 
+  resources :neighborhoods
 
   resources :roles
 
