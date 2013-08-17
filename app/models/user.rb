@@ -104,4 +104,13 @@ class User < ActiveRecord::Base
       return distance_exp[1].to_f
     end
   end
+
+  def get_total_kilometers
+    km = 0
+    last.runs.each do |run|
+      km += run.kilometers
+     end
+    return km.round(2)
+  end
+
 end
