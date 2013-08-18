@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :facebook_id, :twitter_id, :first_name, :last_name, :roles, :access_token, :oauth_token, :oauth_token_secret, :facebook_hash, :twitter_hash, :last_twitt_id, :last_facebook_run
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :facebook_id, :twitter_id, :first_name, :last_name, :roles, :access_token, :oauth_token, :oauth_token_secret, :facebook_hash, :twitter_hash, :last_twitt_id, :last_facebook_run, :neighborhood_id, :kilometers
 
   has_and_belongs_to_many :roles
   has_many :runs
@@ -62,6 +62,7 @@ class User < ActiveRecord::Base
       end
     end 
     self.update_attribute(:last_facebook_run, Time.now)
+    self.save_total_kilometers
   end
 
   def query_tw
@@ -86,6 +87,7 @@ class User < ActiveRecord::Base
       end
     end
     self.update_attribute(:last_twitt_id, twitts[0].id) if not twitts.empty?
+    self.save_total_kilometers
   end
 
   def distance_in_km_for_fb distance_string
@@ -105,12 +107,13 @@ class User < ActiveRecord::Base
     end
   end
 
-  def get_total_kilometers
+  def save_total_kilometers
     km = 0
-    last.runs.each do |run|
+    self.runs.where("accounted != ?", true).each do |run|
       km += run.kilometers
+      run.update_attribute(:accounted, true)
      end
-    return km.round(2)
+    self.update_attribute(:kilometers, self.kilometers + km.round(2))
   end
 
 end

@@ -80,4 +80,12 @@ class NeighborhoodsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def total_kilometers 
+    @hoods = Neighborhood.total_kilometers
+  end
+
+  def total_users
+  end
+
 end

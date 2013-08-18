@@ -6,7 +6,11 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 			flash[:notice] = I18n.t "devise.omniauth_callbacks.success", :kind => "Facebook"
 			#sign_in_and_redirect @user, :event => :authentication
       sign_in @user
-      redirect_to :hood_select
+      if @user.neighborhood_id
+        redirect_to :profile
+      else
+        redirect_to :hood_select
+      end
 		else
 			session["devise.facebook_data"] = auth_hash.except("extra")
 			redirect_to signup_url(@user)
