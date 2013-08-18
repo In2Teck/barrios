@@ -43,6 +43,15 @@ class User < ActiveRecord::Base
 		user || signed_in_resource
 	end 
 
+  def self.update_runs
+    users = User.all
+    users.each do |user|
+      user.save_fb_runs
+      user.save_tw_runs
+      user.save_total_kilometers
+    end
+  end
+
 	def role?(role)
 		return !!self.roles.find_by_name(role)
 	end
@@ -62,7 +71,6 @@ class User < ActiveRecord::Base
       end
     end 
     self.update_attribute(:last_facebook_run, Time.now)
-    self.save_total_kilometers
   end
 
   def query_tw
@@ -87,7 +95,6 @@ class User < ActiveRecord::Base
       end
     end
     self.update_attribute(:last_twitt_id, twitts[0].id) if not twitts.empty?
-    self.save_total_kilometers
   end
 
   def distance_in_km_for_fb distance_string

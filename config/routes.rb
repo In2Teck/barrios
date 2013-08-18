@@ -17,7 +17,10 @@ TorreCentenario::Application.routes.draw do
 	  #get 'signup', :to => "devise/registrations#new"
   end
 
-  resources :users
+  resources :users do
+    match 'update_runs', :on => :collection
+  end
+
 
   match 'hood_select' => 'display#hood_select', :as => :hood_select
 

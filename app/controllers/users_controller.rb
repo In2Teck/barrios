@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  load_and_authorize_resource
+  #load_and_authorize_resource
 
   # GET /users
   # GET /users.json
@@ -83,4 +83,13 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def update_runs
+    User.update_runs
+
+    respond_to do |format|
+      format.json { head :ok }
+    end
+  end
+
 end
