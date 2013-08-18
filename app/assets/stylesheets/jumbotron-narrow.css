@@ -80,12 +80,12 @@ body {
 
 }
 .barrios{
-      background-image: url('/assets/back-ladrillos.png') !important;
+      background-image: url('/assets/back-ladrillos.jpg') !important;
       background-repeat: repeat-y;
 
 }
 .profile{
-      background-image: url('/assets/back-ladrillos.png') !important;
+      background-image: url('/assets/back-ladrillos.jpg') !important;
       background-repeat: repeat-y;
       height: 100%;
 
@@ -116,8 +116,7 @@ body {
 .jumbotron h1 {
   line-height: 1;
   color: white;
-  -webkit-transform: rotate(-2deg); 
-  -moz-transform: rotate(-2deg); 
+  transform: rotate(-2deg); 
 }
 
 .jumbotron .lead {
@@ -125,10 +124,9 @@ body {
   color: white;
   font-family: 'Conv_FuturaStd-CondensedOblique',Sans-Serif;
   text-transform: uppercase;
-  -webkit-transform: rotate(-2deg); 
-  -moz-transform: rotate(-2deg); 
+  transform: rotate(-2deg); 
   word-spacing: 1px;
-  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
   font-size: 25px;
 }
 
@@ -147,14 +145,14 @@ body {
 
   word-spacing: 2px;
   font-size: 18px;  
-  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
 
 }
 .nikelogo{
         font-family:'Conv_FuturaStd-CondensedBoldObl',Sans-Serif;
         color: white;
-        -webkit-transform: rotate(-2deg); 
-        -webkit-font-smoothing: antialiased;
+        transform: rotate(-2deg); 
+        font-smoothing: antialiased;
         line-height: 0;
         font-size: 28px;
 
@@ -308,7 +306,7 @@ margin:0 auto;
     font-family: 'Conv_FuturaStd-MediumCondensed',Sans-Serif;
     color: white;
     border-right: 1px solid #6e6e6e;
-            -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
     font-size: 12px;
 
 
@@ -354,7 +352,7 @@ height: 35px;
   padding: 50px;
   font-size: 20px;
   background-repeat: no-repeat;
-    -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
 }
 .spacing{
   padding-top: 100px;
@@ -374,7 +372,7 @@ height: 35px;
     position: absolute;
 
     background: rgb(0,0,0); /* Old browsers */
-background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(51,51,51,1) 100%); /* FF3.6+ */
+    background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(51,51,51,1) 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,1)), color-stop(100%,rgba(51,51,51,1))); /* Chrome,Safari4+ */
 background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(51,51,51,1) 100%); /* Chrome10+,Safari5.1+ */
 background: -o-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(51,51,51,1) 100%); /* Opera 11.10+ */

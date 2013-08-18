@@ -12,4 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require prefixfree.min
+//= modernizr.min
+//= require zjquery-ui
