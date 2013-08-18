@@ -97,6 +97,7 @@ class UsersController < ApplicationController
     current_user.update_attribute(:neighborhood_id, params[:neighborhood_id]) 
     @user = current_user
     respond_to do |format|
+      format.html { redirect_to :twitter_share}
       format.json { render json: @user }
     end
   end
