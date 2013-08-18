@@ -96,12 +96,14 @@ body {
       line-height: 75px !important;
 }
 @media (max-width: 480px) {
-.barrios h1{
+  .barrios h1{
       font-size: 45px !important;
       line-height: 55px !important;
+  }
+  .lead{
+      font-size: 16px !important;
 
-
-}
+  }
 }
 
 .jumbotron .btn {
@@ -112,8 +114,6 @@ body {
 .jumbotron h1{
       font-family:'Conv_FuturaStd-CondensedBoldObl',Sans-Serif;
       font-size: 53px;
-}
-.jumbotron h1 {
   line-height: 1;
   color: white;
   transform: rotate(-2deg); 
@@ -128,13 +128,6 @@ body {
   word-spacing: 1px;
   font-smoothing: antialiased;
   font-size: 25px;
-}
-
-@media (max-width: 480px) {
-  .lead{
-      font-size: 16px !important;
-
-  }
 }
 
 .instructions{
