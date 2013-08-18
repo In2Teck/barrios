@@ -84,6 +84,12 @@ body {
       background-repeat: repeat-y;
 
 }
+.profile{
+      background-image: url('/assets/back-ladrillos.png') !important;
+      background-repeat: repeat-y;
+      height: 100%;
+
+}
 .barrios h1{
       font-family:'Conv_FuturaStd-CondensedBoldObl',Sans-Serif;
       font-size: 65px !important;
@@ -184,6 +190,34 @@ body {
 .btn-facebook:hover{
   text-decoration: none !important;
   background-image: url('/assets/login-fbhover.png');
+
+}
+.btn-twitter{
+  background-image: url('/assets/boton-twitter-normal.png');
+  width: 182px;
+  height: 35px;
+  letter-spacing: 82px;
+  background-repeat: no-repeat;
+  padding: 4px;
+  display:inline-block;
+}
+.btn-twitter:hover{
+  text-decoration: none !important;
+  background-image: url('/assets/boton-twitter-over.png');
+
+}
+.btn-cerrar{
+  background-image: url('/assets/boton-cerrar-normal.png');
+  width: 182px;
+  height: 35px;
+  letter-spacing: 82px;
+  background-repeat: no-repeat;
+  padding: 4px;
+  display:inline-block;
+}
+.btn-cerrar:hover{
+  text-decoration: none !important;
+  background-image: url('/assets/boton-cerrar-over.png');
 
 }
 .neon-a{
@@ -305,11 +339,25 @@ height: 35px;
 }
 .shares li{
     text-decoration: none;
-    float: right;
+    float: left;
     cursor: pointer;
     padding-right: 10px;    
     list-style-type: none;
 
+}
+.twitter_log{
+  font-family: 'Conv_FuturaStd-CondensedBoldObl';
+  margin: 0 auto;
+  max-width: 300px;
+  background-image:  url('/assets/frame-rojo.png');
+  text-align: center;
+  padding: 50px;
+  font-size: 20px;
+  background-repeat: no-repeat;
+    -webkit-font-smoothing: antialiased;
+}
+.spacing{
+  padding-top: 100px;
 }
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {

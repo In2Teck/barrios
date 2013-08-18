@@ -1,6 +1,6 @@
  <style>
   .ui-autocomplete {
-    max-height: 200px;
+    max-height: 150px;
     overflow-y: auto;
     /* prevent horizontal scrollbar */
     overflow-x: hidden;
@@ -9,6 +9,9 @@
 	font-family: 'Conv_FuturaStd-MediumCondensed';
 	text-align:center;
 	font-size:18px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border:transparent;
   }
   /* IE 6 doesn't support max-height
    * we use height instead, but this forces the menu to always be this tall
@@ -18,26 +21,6 @@
   }
   </style>
 
-      <div class="header">
-        <div class="headcontainer">
-
-            <ul class="nav nav-pills ">
-
-              <li><a class="homebutton" href="#"></a></li>
-              <li><a href="#">ABOUT</a></li>
-              <li><a href="#">RANKING</a></li>
-              <li><a href="#">TERMINOS</a></li>
-
-            </ul>
-            <ul class="shares">
-
-              <li><img src="/assets/tw.png"></li>
-              <li><img src="/assets/fb.png"></li>
-
-            </ul>
-
-        </div>
-      </div>
     <div class="container-narrow">
 
 
@@ -54,7 +37,8 @@
             <div id="neon-up-1" class="neon-up"></div>
 				<div class="hoods-select" style="">	
         			<% @hoods.each do |neighborhood| %>
-							<%= image_tag(neighborhood.picture_url_thumb) %>
+							<a href="/users/update_hood?neighborhood_id=<%=neighborhood.id%>"><%= image_tag(neighborhood.picture_url_thumb) %></a>
+
 					<% end %>
 				</div>	
             <div id="neon-2" class="neon-a"></div>
