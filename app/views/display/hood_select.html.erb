@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <style>
+ <style>
   .ui-autocomplete {
     max-height: 200px;
     overflow-y: auto;
@@ -25,16 +17,7 @@
     height:200px;
   }
   </style>
-    <meta name="author" content="">
 
-    <title>Nike - We Run</title>
-
-    <!-- Bootstrap core CSS -->
-
-    <!-- Custom styles for this template -->
-  </head>
-
-  <body>
       <div class="header">
         <div class="headcontainer">
 
@@ -58,7 +41,7 @@
     <div class="container-narrow">
 
 
-      <div id="barrio1" class="jumbotron barrios" data-stellar-background-ratio="0.3 ">
+      <div id="barrio1" class="jumbotron barrios" >
         	<h1>ESTOS SON <br> LOS 12 BARRIOS<br> DE MÉXICO DF.<br> QUE MÁS SE MUEVEN.</h1>
         	<p class="lead">
         	¿TÚ POR CUÁL CORRES?
@@ -67,7 +50,7 @@
             <div id="neon-1" class="neon-a"></div>
 			<div style="padding-bottom:50%;"> </div>
       </div>
-          <div id="barrio2" class="jumbotron barrios" data-stellar-background-ratio="0.3">
+          <div id="barrio2" class="jumbotron barrios" >
             <div id="neon-up-1" class="neon-up"></div>
 				<div class="hoods-select" style="">	
         			<% @hoods.each do |neighborhood| %>
@@ -77,7 +60,7 @@
             <div id="neon-2" class="neon-a"></div>
 			<div style="padding-bottom:50%;"> </div>
 			</div>
-			<div id="barrio3" class="jumbotron barrios" data-stellar-background-ratio="0.3">
+			<div id="barrio3" class="jumbotron barrios" >
 				<div id="neon-up-2" class="neon-up"></div>
 	            
 				<h1><div>SI TU BARRIO <br>NO ES UNO DE LOS 12<br> CORRE PARA HACERLO VISIBLE.</h1> 	
@@ -91,19 +74,8 @@
 
 			
 		</div>
-	
 
-
-  </body>
-
-</html>
   <script type="text/javascript">
-  $(function(){
-      $.stellar({
-        horizontalScrolling: false,
-        verticalOffset: 40
-      });
-    });
 $( "#neon-1" ).click(function() {
   $('html, body').animate({
   scrollTop: $("#barrio2").offset().top
