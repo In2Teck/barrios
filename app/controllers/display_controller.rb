@@ -27,4 +27,8 @@ class DisplayController < ApplicationController
   def hood_detail
 
   end
+
+  def coming_soon
+
+  end
 end

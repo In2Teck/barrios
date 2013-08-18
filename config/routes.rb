@@ -30,6 +30,8 @@ TorreCentenario::Application.routes.draw do
   match 'profile' => 'display#profile', :as => :profile
 
   match 'hood_detail' => 'display#hood_detail', :as => :hood_detail
+  
+  match 'coming_soon' => 'display#coming_soon', :as => :coming_soon
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
