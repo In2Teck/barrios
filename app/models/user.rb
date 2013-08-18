@@ -47,7 +47,9 @@ class User < ActiveRecord::Base
     users = User.all
     users.each do |user|
       user.save_fb_runs
-      user.save_tw_runs
+      if user.oauth_token
+        user.save_tw_runs
+      end
       user.save_total_kilometers
     end
   end
@@ -120,7 +122,7 @@ class User < ActiveRecord::Base
       km += run.kilometers
       run.update_attribute(:accounted, true)
      end
-    self.update_attribute(:kilometers, self.kilometers + km.round(2))
+    self.update_attribute(:kilometers, (self.kilometers || 0) + km.round(2))
   end
 
 end

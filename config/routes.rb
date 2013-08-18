@@ -19,6 +19,7 @@ TorreCentenario::Application.routes.draw do
 
   resources :users do
     match 'update_runs', :on => :collection
+    match 'update_hood'
   end
 
 

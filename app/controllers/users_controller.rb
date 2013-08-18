@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  #load_and_authorize_resource
+  load_and_authorize_resource :except => [:update_runs]
 
   # GET /users
   # GET /users.json
@@ -89,6 +89,14 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       format.json { head :ok }
+    end
+  end
+
+  def update_hood
+    @user = User.find(params[:user_id])
+    @user.update_attribute(:neighborhood_id, params[:neighborhood_id])
+    respond_to do |format|
+      format.json { render json: @user }
     end
   end
 
