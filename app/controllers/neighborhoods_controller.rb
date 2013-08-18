@@ -1,4 +1,7 @@
 class NeighborhoodsController < ApplicationController
+
+  load_and_authorize_resource :except => [:stats, :total_stats]
+
   # GET /neighborhoods
   # GET /neighborhoods.json
   def index

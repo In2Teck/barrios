@@ -1,6 +1,7 @@
 class DisplayController < ApplicationController
-
-  before_filter :authenticate_user!
+  
+  before_filter :authenticate_user!, :except => [:index]
+  authorize_resource :class => false
 
 	def index
 

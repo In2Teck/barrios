@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
 		user = User.where(:email => auth.info.email).first
 		unless user
 			# CHECK FOR NEW/CREATE
-			user = User.create(first_name:auth.info.first_name, last_name:auth.info.last_name, facebook_id:auth.uid, email:auth.info.email, password:Devise.friendly_token[0,20], access_token:auth.credentials.token, facebook_hash:auth)
+			user = User.create(first_name:auth.info.first_name, last_name:auth.info.last_name, facebook_id:auth.uid, email:auth.info.email, password:Devise.friendly_token[0,20], access_token:auth.credentials.token, facebook_hash:auth, last_facebook_run:Time.now, kilometers:0)
 		end
 		user
 	end

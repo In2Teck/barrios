@@ -7,7 +7,7 @@ class Ability
       can :manage, :all
 	  else
 		  can :manage, :display
-      #can :update_hood, :users 
-    end
+      can :update_hood, User 
+	  end
   end
 end

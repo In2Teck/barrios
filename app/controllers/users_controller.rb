@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+  before_filter :authenticate_user!, :only => [:update_hood]
   load_and_authorize_resource :except => [:update_runs]
 
   # GET /users
@@ -93,8 +94,8 @@ class UsersController < ApplicationController
   end
 
   def update_hood
-    @user = User.find(params[:user_id])
-    @user.update_attribute(:neighborhood_id, params[:neighborhood_id])
+    current_user.update_attribute(:neighborhood_id, params[:neighborhood_id]) 
+    @user = current_user
     respond_to do |format|
       format.json { render json: @user }
     end

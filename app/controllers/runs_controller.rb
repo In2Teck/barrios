@@ -1,4 +1,7 @@
 class RunsController < ApplicationController
+
+  load_and_authorize_resource
+
   # GET /runs
   # GET /runs.json
   def index
