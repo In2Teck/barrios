@@ -1,7 +1,10 @@
 TorreCentenario::Application.routes.draw do
   resources :runs
 
-  resources :neighborhoods
+  resources :neighborhoods do
+    match 'total_stats', :on => :collection
+    match 'stats'
+  end
 
   resources :roles
 

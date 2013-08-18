@@ -2,20 +2,24 @@ class Neighborhood < ActiveRecord::Base
   attr_accessible :name, :picture_url_big, :picture_url_normal, :picture_url_thumb
   has_many :users
 
-  def kilometers
+  def stats
     hood_total_km = 0
+    hood_total_users = 0
     self.users.each do |user|
       hood_total_km += user.kilometers
+      hood_total_users += 1
     end
-    return hood_total_km
+    return {:kilometers => hood_total_km, :users => hood_total_users}
   end
-
-  def self.total_kilometers
+  
+  def self.total_stats
     hoods = Neighborhood.includes(:users)
     hoods.each do |hood| 
-      hood["total_kilometers"] = hood.kilometers
+      stats = hood.stats
+      hood["total_kilometers"] = stats[:kilometers]
+      hood["total_users"] = stats[:users]
     end
-    return hoods 
+    return hoods
   end
 
 end

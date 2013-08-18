@@ -81,11 +81,23 @@ class NeighborhoodsController < ApplicationController
     end
   end
 
-  def total_kilometers 
-    @hoods = Neighborhood.total_kilometers
+  def stats
+    @neighborhood = Neighborhood.find(params[:neighborhood_id])
+    stats = @neighborhood.stats
+    @neighborhood["total_kilometers"] = stats[:kilometers]
+    @neighborhood["total_users"] = stats[:users]
+
+    respond_to do |format|
+      format.json { render json: @neighborhood, :except => [:created_at, :updated_at] }
+    end
   end
 
-  def total_users
+  def total_stats
+    @neighborhoods = Neighborhood.total_stats
+
+    respond_to do |format|
+      format.json { render json: @neighborhoods, :except => [:created_at, :updated_at] }
+    end
   end
 
 end
