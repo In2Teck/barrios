@@ -94,7 +94,7 @@ class UsersController < ApplicationController
   end
 
   def update_hood
-    current_user.update_attribute(:neighborhood_id, params[:neighborhood_id]) 
+    current_user.update_attribute(:neighborhood_id, params[:neighborhood_id]) unless current_user.neighborhood_id
     @user = current_user
     respond_to do |format|
       format.html { redirect_to :twitter_share}
