@@ -1,0 +1,341 @@
+@font-face {
+  font-family: 'Conv_FuturaStd-CondensedBoldObl';
+  src: url('FuturaStd-CondensedBoldObl.eot');
+  src: local('☺'), url('FuturaStd-CondensedBoldObl.woff') format('woff'), url('FuturaStd-CondensedBoldObl.ttf') format('truetype'), url('FuturaStd-CondensedBoldObl.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Conv_FuturaStd-CondensedOblique';
+  src: url('/FuturaStd-CondensedOblique.eot');
+  src: local('☺'), url('FuturaStd-CondensedOblique.woff') format('woff'), url('FuturaStd-CondensedOblique.ttf') format('truetype'), url('FuturaStd-CondensedOblique.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Conv_FuturaStd-MediumCondensed';
+  src: url('FuturaStd-MediumCondensed.eot');
+  src: local('☺'), url('FuturaStd-MediumCondensed.woff') format('woff'), url('FuturaStd-MediumCondensed.ttf') format('truetype'), url('FuturaStd-MediumCondensed.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+	font-family: 'NikeNeon';
+	src: url('Nikeneon-Regular.eot');
+	src: local('☺'), url('Nikeneon-Regular.woff') format('woff'), url('Nikeneon-Regular.ttf') format('truetype'), url('Nikeneon-Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+
+/* Space out content a bit */
+body {
+}
+
+/* Everything but the jumbotron gets side spacing for mobile-first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+	margin:0 auto;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+/* Custom container */
+.container-narrow {
+  margin: 0 auto;
+  max-width: 1600px;
+}
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+    background-image: url('/assets/back.png');
+    background-position: center;
+    background-repeat: no-repeat;
+
+
+}
+.barrios{
+      background-image: url('/assets/back-ladrillos.png') !important;
+      background-repeat: repeat-y;
+
+}
+.barrios h1{
+      font-family:'Conv_FuturaStd-CondensedBoldObl',Sans-Serif;
+      font-size: 65px !important;
+      line-height: 75px !important;
+}
+@media (max-width: 480px) {
+.barrios h1{
+      font-size: 45px !important;
+      line-height: 55px !important;
+
+
+}
+}
+
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+
+.jumbotron h1{
+      font-family:'Conv_FuturaStd-CondensedBoldObl',Sans-Serif;
+      font-size: 53px;
+}
+.jumbotron h1 {
+  line-height: 1;
+  color: white;
+  -webkit-transform: rotate(-2deg); 
+  -moz-transform: rotate(-2deg); 
+}
+
+.jumbotron .lead {
+  line-height: 1.3;
+  color: white;
+  font-family: 'Conv_FuturaStd-CondensedOblique',Sans-Serif;
+  text-transform: uppercase;
+  -webkit-transform: rotate(-2deg); 
+  -moz-transform: rotate(-2deg); 
+  word-spacing: 1px;
+  -webkit-font-smoothing: antialiased;
+  font-size: 25px;
+}
+
+@media (max-width: 480px) {
+  .lead{
+      font-size: 16px !important;
+
+  }
+}
+
+.instructions{
+    line-height: 1.4;
+  color: white;
+  font-family: 'Conv_FuturaStd-MediumCondensed',Sans-Serif;
+  text-transform: uppercase;
+
+  word-spacing: 2px;
+  font-size: 18px;  
+  -webkit-font-smoothing: antialiased;
+
+}
+.nikelogo{
+        font-family:'Conv_FuturaStd-CondensedBoldObl',Sans-Serif;
+        color: white;
+        -webkit-transform: rotate(-2deg); 
+        -webkit-font-smoothing: antialiased;
+        line-height: 0;
+        font-size: 28px;
+
+}
+
+
+.btn-nike{
+  background-image: url('/assets/nike.png');
+  width: 182px;
+  height: 35px;
+  letter-spacing: 82px;
+  background-repeat: no-repeat;
+  padding: 4px;
+	display:inline-block;
+
+}
+.btn-nike:hover{
+  text-decoration: none !important;
+  background-image: url('/assets/nikehover.png');
+
+
+}
+
+.btn-facebook{
+  background-image: url('/assets/login-fb.png');
+  width: 182px;
+  height: 35px;
+  letter-spacing: 82px;
+  background-repeat: no-repeat;
+  padding: 4px;
+	display:inline-block;
+}
+.btn-facebook:hover{
+  text-decoration: none !important;
+  background-image: url('/assets/login-fbhover.png');
+
+}
+.neon-a{
+  background-image: url('/assets/btn-a.png');
+  width: 34px;
+  height: 32px;
+  background-repeat:no-repeat;
+  margin:0 auto;
+}
+.neon-a:hover{
+    background-image: url('/assets/btn-a-on.png');
+    cursor: pointer;
+	background-repeat:no-repeat;
+	margin:0 auto;
+  
+
+}
+.hoods-select{
+margin:0 auto;
+max-width:600px;
+}
+.hood-list li{
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	
+}
+.remove-l{
+	clear:both;
+}
+.neon-up{
+  background-image: url('/assets/btn-up.png');
+  width: 31px;
+  height: 29px;
+	background-repeat:no-repeat;
+  margin:0 auto;
+
+
+}
+.neon-up:hover{
+    background-image: url('/assets/btn-up-on.png');
+    cursor: pointer;
+	background-repeat:no-repeat;
+	
+  margin:0 auto;
+
+}
+
+.corre-neon{
+	font-family:'NikeNeon',Sans-Serif;
+	color:#00d942;
+	font-size:42px;
+	text-shadow:0 0 #08da48, 0 0 10px #08da48, 0 0 20px #08da48, 0 0 30px #08da48, 0 0 1000px #08da48;
+	
+    
+}
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+.headcontainer{
+  max-width: 1024px;
+margin:0 auto;
+}
+.homebutton{
+  background-image: url('/assets/swoosh-home.png');
+  width: 30px;
+  height: 20px;
+  background-repeat: no-repeat;
+  margin-top: 7px;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-right: none !important;
+
+
+}
+.homebutton:hover{
+  background-image: url('/assets/swoosh-home.png') !important;
+  background-repeat: no-repeat !important;
+
+
+}
+
+.nav-pills > li > a {
+    font-family: 'Conv_FuturaStd-MediumCondensed',Sans-Serif;
+    color: white;
+    border-right: 1px solid #6e6e6e;
+            -webkit-font-smoothing: antialiased;
+    font-size: 12px;
+
+
+}
+
+.nav-pills > li > a:hover {
+
+background: rgb(51,51,51); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(51,51,51,1) 0%, rgba(0,0,0,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(51,51,51,1)), color-stop(100%,rgba(0,0,0,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(51,51,51,1) 0%,rgba(0,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(51,51,51,1) 0%,rgba(0,0,0,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(51,51,51,1) 0%,rgba(0,0,0,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(51,51,51,1) 0%,rgba(0,0,0,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+
+} 
+
+.shares{
+  float: right;
+clear: both;
+margin-top: -35px;
+padding-top: 10px;
+margin-bottom: -10px;
+border-left: 1px solid #6e6e6e;
+height: 35px;
+
+}
+.shares li{
+    text-decoration: none;
+    float: right;
+    cursor: pointer;
+    padding-right: 10px;    
+    list-style-type: none;
+
+}
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    width: 100%;
+    position: absolute;
+
+    background: rgb(0,0,0); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(51,51,51,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,1)), color-stop(100%,rgba(51,51,51,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(51,51,51,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(51,51,51,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(51,51,51,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(51,51,51,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#333333',GradientType=0 ); /* IE6-9 */
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}

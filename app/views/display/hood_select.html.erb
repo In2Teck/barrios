@@ -1,2 +1,172 @@
-<%= @hoods %>
-<%= @runs %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <style>
+  .ui-autocomplete {
+    max-height: 200px;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+	background-color:black;
+	opacity:.9;
+	font-family: 'Conv_FuturaStd-MediumCondensed';
+	text-align:center;
+	font-size:18px;
+  }
+  /* IE 6 doesn't support max-height
+   * we use height instead, but this forces the menu to always be this tall
+   */
+  * html .ui-autocomplete {
+    height:200px;
+  }
+  </style>
+    <meta name="author" content="">
+
+    <title>Nike - We Run</title>
+
+    <!-- Bootstrap core CSS -->
+
+    <!-- Custom styles for this template -->
+  </head>
+
+  <body>
+      <div class="header">
+        <div class="headcontainer">
+
+            <ul class="nav nav-pills ">
+
+              <li><a class="homebutton" href="#"></a></li>
+              <li><a href="#">ABOUT</a></li>
+              <li><a href="#">RANKING</a></li>
+              <li><a href="#">TERMINOS</a></li>
+
+            </ul>
+            <ul class="shares">
+
+              <li><img src="/assets/tw.png"></li>
+              <li><img src="/assets/fb.png"></li>
+
+            </ul>
+
+        </div>
+      </div>
+    <div class="container-narrow">
+
+
+      <div id="barrio1" class="jumbotron barrios" data-stellar-background-ratio="0.3 ">
+        	<h1>ESTOS SON <br> LOS 12 BARRIOS<br> DE MÉXICO DF.<br> QUE MÁS SE MUEVEN.</h1>
+        	<p class="lead">
+        	¿TÚ POR CUÁL CORRES?
+			</p>
+			<br>    
+            <div id="neon-1" class="neon-a"></div>
+			<div style="padding-bottom:50%;"> </div>
+      </div>
+          <div id="barrio2" class="jumbotron barrios" data-stellar-background-ratio="0.3">
+            <div id="neon-up-1" class="neon-up"></div>
+				<div class="hoods-select" style="">	
+        			<% @hoods.each do |neighborhood| %>
+							<%= image_tag(neighborhood.picture_url_thumb) %>
+					<% end %>
+				</div>	
+            <div id="neon-2" class="neon-a"></div>
+			<div style="padding-bottom:50%;"> </div>
+			</div>
+			<div id="barrio3" class="jumbotron barrios" data-stellar-background-ratio="0.3">
+				<div id="neon-up-2" class="neon-up"></div>
+	            
+				<h1><div>SI TU BARRIO <br>NO ES UNO DE LOS 12<br> CORRE PARA HACERLO VISIBLE.</h1> 	
+					<div class="ui-widget">
+					  <input id="tags" />
+					</div>
+				<div class="corre-neon">CORRE</div>
+				<div style="padding-bottom:20%;"> </div>
+				
+			</div>
+
+			
+		</div>
+	
+
+
+  </body>
+
+</html>
+  <script type="text/javascript">
+  $(function(){
+      $.stellar({
+        horizontalScrolling: false,
+        verticalOffset: 40
+      });
+    });
+$( "#neon-1" ).click(function() {
+  $('html, body').animate({
+  scrollTop: $("#barrio2").offset().top
+  }, 1000);
+
+ });
+
+$( "#neon-2" ).click(function() {
+  $('html, body').animate({
+  scrollTop: $("#barrio3").offset().top
+  }, 1000);
+
+ });
+
+
+$( "#neon-up-1" ).click(function() {
+  $('html, body').animate({
+  scrollTop: $("#barrio1").offset().top
+  }, 1000);
+
+ });
+
+
+$( "#neon-up-2" ).click(function() {
+  $('html, body').animate({
+  scrollTop: $("#barrio2").offset().top
+  }, 1000);
+
+ });
+
+
+
+  </script>
+
+
+  <script>
+  $(function() {
+    var availableTags = [
+      "Condesa",
+      "Roma",
+      "Coyoacan",
+      "Tepito",
+      "Satélite",
+      "Coapa",
+      "Clojure",
+      "COBOL",
+      "ColdFusion",
+      "Erlang",
+      "Fortran",
+      "Groovy",
+      "Haskell",
+      "Java",
+      "JavaScript",
+      "Lisp",
+      "Perl",
+      "PHP",
+      "Python",
+      "Ruby",
+      "Scala",
+      "Scheme"
+    ];
+    $( "#tags" ).autocomplete({
+      source: availableTags
+    });
+  });
+  </script>

@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(:version => 20130815080152) do
     t.string   "last_name"
     t.text     "facebook_hash"
     t.text     "twitter_hash"
-    t.string   "first_twitt_id"
+    t.string   "last_twitt_id"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "email",                  :default => "", :null => false
