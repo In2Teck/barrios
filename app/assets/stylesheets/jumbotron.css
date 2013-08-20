@@ -1,0 +1,52 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+@font-face {
+  font-family: 'Conv_FuturaStd-CondensedBoldObl';
+  src: url('../../dist/fonts/FuturaStd-CondensedBoldObl.eot');
+  src: local('☺'), url('../../dist/fonts/FuturaStd-CondensedBoldObl.woff') format('woff'), url('../../dist/fonts/FuturaStd-CondensedBoldObl.ttf') format('truetype'), url('../../dist/fonts/FuturaStd-CondensedBoldObl.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Conv_FuturaStd-CondensedOblique';
+  src: url('.../../dist/fonts/FuturaStd-CondensedOblique.eot');
+  src: local('☺'), url('.../../dist/fonts/FuturaStd-CondensedOblique.woff') format('woff'), url('.../../dist/fonts/FuturaStd-CondensedOblique.ttf') format('truetype'), url('.../../dist/fonts/FuturaStd-CondensedOblique.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'FuturaStd-MediumCondensed';
+  src: url('../fonts/FuturaStd-MediumCondensed.eot');
+  src: local('☺'), url('../fonts/FuturaStd-MediumCondensed.woff') format('woff'), url('../fonts/FuturaStd-MediumCondensed.ttf') format('truetype'), url('../fonts/FuturaStd-MediumCondensed.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+	font-family: 'NikeNeon';
+	src: url('Nikeneon-Regular.eot');
+	src: local('☺'), url('Nikeneon-Regular.woff') format('woff'), url('Nikeneon-Regular.ttf') format('truetype'), url('Nikeneon-Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+body {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.title-jumbo{
+  padding: 30px;
+  line-height: 1;
+  color: inherit;
+  font-weight: 200;
+  font-size: 63px;
+  line-height: 1;
+  color: inherit;
+  font-weight: 500;
+  max-width: 600px;
+  margin-right: auto;
+  margin-left: auto;
+  font-family: 'Conv_FuturaStd-CondensedBoldObl';
+  -webkit-transform: rotate(-2deg); 
+}
+.sub-jumbo{
+	font-family: 'Conv_FuturaStd-CondensedOblique';
+
+}
