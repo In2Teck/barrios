@@ -158,6 +158,8 @@ body {
 .btn-nike:hover{
   text-decoration: none !important;
   background-image: url('/assets/nikehover.png');
+  background-size: 188px 45px;  
+
 
 
 }
@@ -176,6 +178,8 @@ body {
 .btn-facebook:hover{
   text-decoration: none !important;
   background-image: url('/assets/login-fbhover.png');
+  background-size: 188px 45px;  
+
 
 }
 .btn-twitter{
