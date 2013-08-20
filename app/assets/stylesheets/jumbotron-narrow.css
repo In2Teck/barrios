@@ -41,25 +41,6 @@ body {
   padding-right: 15px;
 }
 
-/* Custom page header */
-.header {
-	margin:0 auto;
-  background: rgb(0,0,0); /* Old browsers */
-    background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(51,51,51,1) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,1)), color-stop(100%,rgba(51,51,51,1))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(51,51,51,1) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(51,51,51,1) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(51,51,51,1) 100%); /* IE10+ */
-background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(51,51,51,1) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#333333',GradientType=0 ); /* IE6-9 */
-}
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 40px;
-  padding-bottom: 19px;
-}
 
 /* Custom page footer */
 .footer {
@@ -279,93 +260,9 @@ max-width:600px;
 .marketing p + h4 {
   margin-top: 28px;
 }
-.headcontainer{
-  max-width: 1024px;
-margin:0 auto;
-}
-.homebutton{
-  background-image: url('/assets/swoosh-home.png');
-  width: 30px;
-  height: 20px;
-  background-repeat: no-repeat;
-  margin-top: 7px;
-  padding-right: 10px;
-  padding-left: 10px;
-  border-right: none !important;
-  background-size: 40px 15px
-
-
-}
-
-.nav-pills .homebutton:hover{
-  background-image: url('/assets/swoosh-home.png') ;
-  background-repeat: no-repeat; 
-  width: 30px;
-  height: 20px;
-  background-size: 40px 15px
 
 
 
-}
-
-.nav-pills > li > a {
-    font-family: 'Conv_FuturaStd-MediumCondensed',Sans-Serif;
-    color: white;
-    border-right: 1px solid #6e6e6e;
-    font-smoothing: antialiased;
-    font-size: 12px;
-
-
-}
-
-.nav-pills > li > a:hover {
-
-background: rgb(51,51,51); /* Old browsers */
-background: -moz-linear-gradient(top,  rgba(51,51,51,1) 0%, rgba(0,0,0,1) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(51,51,51,1)), color-stop(100%,rgba(0,0,0,1))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  rgba(51,51,51,1) 0%,rgba(0,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  rgba(51,51,51,1) 0%,rgba(0,0,0,1) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  rgba(51,51,51,1) 0%,rgba(0,0,0,1) 100%); /* IE10+ */
-background: linear-gradient(to bottom,  rgba(51,51,51,1) 0%,rgba(0,0,0,1) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
-
-} 
-
-@media (max-width: 480px) {
-.shares{
-  display: none;
-}
-.jumbotron h1{
-        font-size: 33px;
-
-}
-.lead{
-      font-size: 16px;
-
-}
-.nav-pills > li + li > a {
-  margin-left:8px;
-}
-}
-
-.shares{
-  float: right;
-clear: both;
-margin-top: -35px;
-padding-top: 10px;
-margin-bottom: -10px;
-border-left: 1px solid #6e6e6e;
-height: 35px;
-
-}
-.shares li{
-    text-decoration: none;
-    float: left;
-    cursor: pointer;
-    padding-right: 10px;    
-    list-style-type: none;
-
-}
 .twitter_log{
   font-family: 'Conv_FuturaStd-CondensedBoldObl';
   margin: 0 auto;
