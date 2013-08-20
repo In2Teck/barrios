@@ -14,4 +14,3 @@
 //= require jquery_ujs
 //= require prefixfree.min
 //= modernizr.min
-//= require zjquery-ui
