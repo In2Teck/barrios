@@ -8,7 +8,16 @@ class DisplayController < ApplicationController
 	end
 
   def hood_select
-    @hoods = Neighborhood.where("picture_url_big is not null")
+    if current_user.neighborhood_id
+      if current_user.oauth_token 
+        redirect_to :profile
+      else
+        redirect_to :twitter_share
+      end
+    else
+      @hoods = Neighborhood.where("picture_url_big is not null")
+    end
+
   end
 
   def twitter_share
