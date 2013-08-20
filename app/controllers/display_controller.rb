@@ -8,7 +8,7 @@ class DisplayController < ApplicationController
 	end
 
   def hood_select
-    @hoods = Neighborhood.all
+    @hoods = Neighborhood.where("picture_url_big is not null")
   end
 
   def twitter_share

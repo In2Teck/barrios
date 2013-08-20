@@ -37,7 +37,7 @@
             <div id="neon-up-1" class="neon-up"></div>
 				<div class="hoods-select" style="">	
         			<% @hoods.each do |neighborhood| %>
-							<a href="/users/update_hood?neighborhood_id=<%=neighborhood.id%>"><%= image_tag(neighborhood.picture_url_thumb) %></a>
+							<a href="/users/update_hood?neighborhood_id=<%=neighborhood.id%>"><%= image_tag(neighborhood.picture_url_big) %></a>
 
 					<% end %>
 				</div>	

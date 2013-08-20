@@ -69,7 +69,6 @@ ActiveRecord::Schema.define(:version => 20130817230156) do
     t.string   "access_token"
     t.string   "oauth_token"
     t.string   "oauth_token_secret"
-    t.integer  "barrio_id"
     t.datetime "last_facebook_run"
     t.integer  "neighborhood_id"
     t.float    "kilometers"
