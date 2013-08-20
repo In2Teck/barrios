@@ -25,8 +25,9 @@ class DisplayController < ApplicationController
   end
 
   def profile
-    @runs = current_user.runs if current_user.runs
-    #TODO: update current_user.first_twitt_id with @twitts[0].id
+    #Before release
+    redirect_to :coming_soon 
+    #@runs = current_user.runs if current_user.runs
   end
 
   def hood_ranking
