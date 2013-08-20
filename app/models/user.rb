@@ -46,7 +46,9 @@ class User < ActiveRecord::Base
   def self.update_runs
     users = User.all
     users.each do |user|
-      user.save_fb_runs
+      if user.access_token
+        user.save_fb_runs
+      end
       if user.oauth_token
         user.save_tw_runs
       end
