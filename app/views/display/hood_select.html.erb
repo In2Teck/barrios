@@ -3,20 +3,24 @@
   <%= stylesheet_link_tag 'jumbotron' %>  
   <%= stylesheet_link_tag 'header' %>
 <% end %> 
-
     <div class="jumbotron container text-center">
-      <div class="container back-brick">
-        <div class="title-jumbo">
-        ESTOS SON<br> 
-        LOS 12 BARRIOS<br>
-        DE MÉXICO DF.<br>
-        QUE MÁS SE MUEVEN.
-      </div>
-        <p class="sub-jumbo">¿TÚ POR CUÁL CORRES?</p>
-      </div>
+        <div style="margin-top:7%;" ></div>
+        <div class="container back-brick">
+          <div class="title-jumbo">
+              ESTOS SON<br> 
+              LOS 12 BARRIOS<br>
+              DE MÉXICO DF.<br>
+              QUE MÁS SE MUEVEN.
+          </div>
+          <p class="sub-jumbo">¿TÚ POR CUÁL CORRES?</p>
+          <div id="neon-down-1" class="neon-down visible-lg visible-md"></div>
+
+        </div>
     </div>
     <div class="container back-brick">
           <div style="margin-bottom:40%;" class="visible-md  visible-lg"></div>
+          <div style="margin-bottom:10%;" class="hidden-md    hidden-lg"></div>
+
 
       <!-- Example row of columns -->
             <div class="row barrioscontainer">
@@ -30,6 +34,8 @@
             </div>
           <div style="margin-bottom:40%;" class="visible-md  visible-lg"></div>
 
+
+
       
 
 
@@ -37,4 +43,11 @@
 
    
     </div> <!-- /container -->
+    <script type="text/javascript">
+          window.addEventListener("load",function() {
+              setTimeout(function(){
+                  window.scrollTo(0, 1);
+              }, 0);
+          });
+    </script>
 

@@ -59,6 +59,24 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+.neon-down{
+
+  background-image: url('/assets/btn-a.png');
+  width: 34px;
+  height: 32px;
+  background-repeat:no-repeat;
+  background-size: 34px 32px;
+  margin:0 auto;
+}
+
+.neon-down:hover{
+    background-image: url('/assets/btn-a-on.png');
+    cursor: pointer;
+  background-repeat:no-repeat;
+  margin:0 auto;
+  
+
+}
 @media screen and (max-width: 400px) {
   .barrioimg{width:120px;}
 
