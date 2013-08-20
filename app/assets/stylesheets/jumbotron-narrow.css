@@ -7,7 +7,7 @@
 }
 @font-face {
   font-family: 'Conv_FuturaStd-CondensedOblique';
-  src: url('/FuturaStd-CondensedOblique.eot');
+  src: url('FuturaStd-CondensedOblique.eot');
   src: local('☺'), url('FuturaStd-CondensedOblique.woff') format('woff'), url('FuturaStd-CondensedOblique.ttf') format('truetype'), url('FuturaStd-CondensedOblique.svg') format('svg');
   font-weight: normal;
   font-style: normal;

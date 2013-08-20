@@ -750,7 +750,7 @@ pre code {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
-  background-image: url('../img/back-ladrillos.jpg');
+  background-image: url('/assets/back-ladrillos.jpg');
   background-repeat: repeat-y;
   background-position: center;
   background-size: 100%;
@@ -1235,7 +1235,7 @@ pre code {
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1000px) {
   .container {
     max-width: 1170px;
   }
@@ -4922,7 +4922,6 @@ a.list-group-item.active > .badge,
 }
 
 .jumbotron {
-  padding: 30px;
   font-size: 21px;
   font-weight: 200;
   line-height: 2.1428571435;

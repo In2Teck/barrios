@@ -1,128 +1,39 @@
- <style>
-  .ui-autocomplete {
-    max-height: 150px;
-    overflow-y: auto;
-    /* prevent horizontal scrollbar */
-    overflow-x: hidden;
-	background-color:black;
-	opacity:.9;
-	font-family: 'Conv_FuturaStd-MediumCondensed';
-	text-align:center;
-	font-size:18px;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border:transparent;
-  }
-  /* IE 6 doesn't support max-height
-   * we use height instead, but this forces the menu to always be this tall
-   */
-  * html .ui-autocomplete {
-    height:200px;
-  }
-  </style>
 
-    <div class="container-narrow">
+  <%= stylesheet_link_tag 'bootstrap-3' %>
+  <%= stylesheet_link_tag 'jumbotron' %>  
+    <%= stylesheet_link_tag 'header' %>  
 
-
-      <div id="barrio1" class="jumbotron barrios" >
-        	<h1 id="title_barrios">ESTOS SON <br> LOS 12 BARRIOS<br> DE MÉXICO DF.<br> QUE MÁS SE MUEVEN.</h1>
-        	<p class="lead">
-        	¿TÚ POR CUÁL CORRES?
-			</p>
-			<br>    
-            <div id="neon-1" class="neon-a"></div>
-			<div style="padding-bottom:50%;"> </div>
+    <div class="jumbotron container text-center">
+      <div class="container back-brick">
+        <div class="title-jumbo">
+        ESTOS SON<br> 
+        LOS 12 BARRIOS<br>
+        DE MÉXICO DF.<br>
+        QUE MÁS SE MUEVEN.
       </div>
-          <div id="barrio2" class="jumbotron barrios" >
-            <div id="neon-up-1" class="neon-up"></div>
-				<div class="hoods-select" style="">	
-        			<% @hoods.each do |neighborhood| %>
-							<a href="/users/update_hood?neighborhood_id=<%=neighborhood.id%>"><%= image_tag(neighborhood.picture_url_big) %></a>
+        <p class="sub-jumbo">¿TÚ POR CUÁL CORRES?</p>
+      </div>
+    </div>
+    <div class="container back-brick">
+          <div style="margin-bottom:40%;" class="visible-md  visible-lg"></div>
 
-					<% end %>
-				</div>	
-            <div id="neon-2" class="neon-a"></div>
-			<div style="padding-bottom:50%;"> </div>
-			</div>
-			<div id="barrio3" class="jumbotron barrios" >
-				<div id="neon-up-2" class="neon-up"></div>
-	            
-				<h1><div>SI TU BARRIO <br>NO ES UNO DE LOS 12<br> CORRE PARA HACERLO VISIBLE.</h1> 	
-					<div class="ui-widget">
-					  <input id="tags" />
-					</div>
-				<div class="corre-neon">CORRE</div>
-				<div style="padding-bottom:20%;"> </div>
-				
-			</div>
+      <!-- Example row of columns -->
+            <div class="row barrioscontainer">
+     
+                            <% @hoods.each do |neighborhood| %>
+                                             <div class="col-lg-3 col-sm-4 col-xs-6 text-center">
+                                  <a href="/users/update_hood?neighborhood_id=<%=neighborhood.id%>"><%= image_tag(neighborhood.picture_url_big , :class => "barrioimg") %></a>
+                                                        </div>
 
-			
-		</div>
+                            <% end %>
+            </div>
+          <div style="margin-bottom:40%;" class="visible-md  visible-lg"></div>
 
-  <script type="text/javascript">
-$( "#neon-1" ).click(function() {
-  $('html, body').animate({
-  scrollTop: $("#barrio2").offset().top
-  }, 1000);
-
- });
-
-$( "#neon-2" ).click(function() {
-  $('html, body').animate({
-  scrollTop: $("#barrio3").offset().top
-  }, 1000);
-
- });
+      
 
 
-$( "#neon-up-1" ).click(function() {
-  $('html, body').animate({
-  scrollTop: $("#barrio1").offset().top
-  }, 1000);
+  
 
- });
+   
+    </div> <!-- /container -->
 
-
-$( "#neon-up-2" ).click(function() {
-  $('html, body').animate({
-  scrollTop: $("#barrio2").offset().top
-  }, 1000);
-
- });
-
-
-
-  </script>
-
-
-  <script>
-  $(function() {
-    var availableTags = [
-      "Condesa",
-      "Roma",
-      "Coyoacan",
-      "Tepito",
-      "Satélite",
-      "Coapa",
-      "Clojure",
-      "COBOL",
-      "ColdFusion",
-      "Erlang",
-      "Fortran",
-      "Groovy",
-      "Haskell",
-      "Java",
-      "JavaScript",
-      "Lisp",
-      "Perl",
-      "PHP",
-      "Python",
-      "Ruby",
-      "Scala",
-      "Scheme"
-    ];
-    $( "#tags" ).autocomplete({
-      source: availableTags
-    });
-  });
-  </script>
