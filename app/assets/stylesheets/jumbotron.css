@@ -68,7 +68,7 @@ body {
   font-smoothing: antialiased;
 }
 .barrioimg{
-  width: 170px;
+  width: 150px;
 }
 .barrioscontainer{
   max-width: 800px;
@@ -98,6 +98,38 @@ body {
   width: 132px;
   height: 64px; 
 }
+.corre-btn{
+  background-image: url('/assets/corre.png');
+  background-size: 146px 55px;
+  width:146px;
+  height:  55px;
+  margin-top:20px;
+}
+.corre-btn:hover{
+    background-image: url('/assets/correhover.png');
+
+}
+
+
+.neon-up{
+
+  background-image: url('/assets/btn-up.png');
+  width: 34px;
+  height: 32px;
+  background-repeat:no-repeat;
+  background-size: 34px 32px;
+  margin:0 auto;
+}
+
+.neon-up:hover{
+  background-image: url('/assets/btn-up-on.png');
+  cursor: pointer;
+  background-repeat:no-repeat;
+  margin:0 auto;
+  
+
+}
+
 
 
 /* AUTOCOMPLETE
@@ -146,6 +178,7 @@ AUTOCOMPLETE
 
 
 @media screen and (max-width: 400px) {
+
   .barrioimg{width:120px;}
 
 
@@ -164,4 +197,9 @@ AUTOCOMPLETE
 .sub-jumbo{
   margin-bottom: 20%;
 }
+.corre-btn:hover{
+    background-image: url('/assets/corre.png');
+
+}
+
 }

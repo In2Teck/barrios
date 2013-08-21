@@ -8,9 +8,9 @@
 <% end %> 
   <%= javascript_include_tag 'zjquery-ui' %>
 
-    <div class="jumbotron container text-center">
+    <div id="home-hood" class="jumbotron container text-center">
         <div style="margin-top:7%;" ></div>
-        <div class="container back-brick">
+        <div  class="container back-brick">
           <div class="title-jumbo">
               ESTOS SON<br> 
               LOS 12 BARRIOS<br>
@@ -18,7 +18,7 @@
               QUE MÁS SE MUEVEN.
           </div>
           <p class="sub-jumbo">¿TÚ POR CUÁL CORRES?</p>
-          <div id="neon-down-1" class="neon-down visible-lg visible-md"></div>
+          <div id="neon-down-1" class="neon-down"></div>
 
         </div>
     </div>
@@ -29,6 +29,8 @@
           <div style="margin-bottom:40%;" class="visible-md  visible-lg"></div>
           <div style="margin-bottom:10%;" class="hidden-md    hidden-lg"></div>
           <div id="barrios-select" class="row barrioscontainer">
+          <div id="neon-up-1" class="neon-up"></div>
+
      
                             <% @hoods.each do |neighborhood| %>
                                              <div class="col-lg-3 col-sm-4 col-xs-6 text-center">
@@ -43,13 +45,15 @@
 
 
           <div id="autocomplete" class="jumbotron container text-center">
+              <div id="neon-up-2" class="neon-up"></div>
+
               <div class="title-jumbo">
                   SI TU BARRIO <br>NO ES UNO DE LOS 12<br> CORRE PARA HACERLO VISIBLE.  
               </div>
               <div class="ui-widget">
                 <input id="tags" />
               </div>
-              <a id="correlink" href=""><div class="corre-neon">CORRE</div></a>
+              <a id="correlink" href=""><div class="corre-btn text-center container"></div></a>
               <div style="padding-bottom:20%;"> </div>
           </div>
 
@@ -99,5 +103,17 @@
                 scrollTop: $("#autocomplete").offset().top
                 }, 1000);
          });
+         $( "#neon-up-1" ).click(function() {
+                $('html, body').animate({
+                scrollTop: $("#home-hood").offset().top
+                }, 1000);
+         });
+          $( "#neon-up-2" ).click(function() {
+                $('html, body').animate({
+                scrollTop: $("#barrios-select").offset().top
+                }, 1000);
+         });
+
+        
   </script>
 
