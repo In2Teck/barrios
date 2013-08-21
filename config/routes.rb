@@ -22,7 +22,6 @@ TorreCentenario::Application.routes.draw do
     match 'update_hood', :on => :collection
   end
 
-
   match 'hood_select' => 'display#hood_select', :as => :hood_select
 
   match 'twitter_share' => 'display#twitter_share', :as => :twitter_share
@@ -32,6 +31,8 @@ TorreCentenario::Application.routes.draw do
   match 'hood_detail' => 'display#hood_detail', :as => :hood_detail
   
   match 'coming_soon' => 'display#coming_soon', :as => :coming_soon
+  
+  match 'terms_and_conditions' => 'display#terms_and_conditions', :as => :terms_and_conditions
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

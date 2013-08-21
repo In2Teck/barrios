@@ -24,30 +24,21 @@
     <%= csrf_meta_tags %>
 </head>
 <body>
-    
       <div class="header">
         <div class="headcontainer ">
-
             <ul class="nav nav-pills">
-
-              <li><a class="homebutton" href="#"></a></li>
-              <li><a href="#">ABOUT</a></li>
+              <li><a class="homebutton" href="http://www.nike.com/mx/es_la/" target="_blank" ></a></li>
+              <li><a href="/">ABOUT</a></li>
               <li><a href="#">RANKING</a></li>
-              <li><a href="#">TERMINOS</a></li>
-
+              <li><a href="/terms_and_conditions">TERMINOS</a></li>
             </ul>
-
             <ul class="shares">
-                 <% if user_signed_in? %>
-               <li><%= current_user.first_name %></li>
-
-                 <% end %>
-
-              <li><img style="width: 17px; height:16px;" src="/assets/tw.png"></li>
-              <li><img style="width: 17px; height:16px;" src="/assets/fb.png"></li>
-
+              <% if user_signed_in? %>
+                <li><%= current_user.first_name %></li>
+              <% end %>
+                <li><%= link_to image_tag("/assets/tw.png", :style => "width: 17px; height:16px;"), 'http://twitter.com/nikecorremx', :target => "_blank" %></li>
+                <li><%= link_to image_tag("/assets/fb.png", :style => "width: 17px; height:16px;"), 'http://www.facebook.com/nikecorre', :target => "_blank" %></li>
             </ul>
-
         </div>
       </div>
 

@@ -43,4 +43,8 @@ class DisplayController < ApplicationController
   def coming_soon
 
   end
+
+  def terms_and_conditions
+
+  end
 end
