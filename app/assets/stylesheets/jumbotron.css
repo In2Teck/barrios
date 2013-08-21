@@ -130,8 +130,34 @@ body {
 
 }
 
+.shares-social{
+width: 200px;
+margin-right: auto;
+margin-left: auto;
+}
+.shares-social a{
+  text-decoration: none;
+}
+.share-facebook{
+background-image: url('/assets/comparte-normal.png');
+width:97px;
+height: 37px;
+background-size: 97px 37px;
+float: right;
+}
+.share-facebook:hover{
+background-image: url('/assets/comparte-over.png');
+}
+.share-twitter{
+background-image: url('/assets/tweet-normal.png');
+width:97px;
+height: 37px;
+background-size: 97px 37px;
 
-
+}
+.share-twitter:hover{
+background-image: url('/assets/tweet-over.png');
+}
 /* AUTOCOMPLETE
 
 
