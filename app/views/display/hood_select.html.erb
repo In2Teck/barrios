@@ -3,10 +3,12 @@
   <%= stylesheet_link_tag 'jumbotron' %>  
   <%= stylesheet_link_tag 'header' %>
   <%= stylesheet_link_tag 'autocomplete' %>
-
-
 <% end %> 
+<% content_for :head_script do %>
   <%= javascript_include_tag 'zjquery-ui' %>
+<% end %>
+
+
 
     <div id="home-hood" class="jumbotron container text-center">
         <div style="margin-top:7%;" ></div>
@@ -27,7 +29,7 @@
 
     <div class="container back-brick">
           <div style="margin-bottom:40%;" class="visible-md  visible-lg"></div>
-          <div style="margin-bottom:10%;" class="hidden-md    hidden-lg"></div>
+          <div style="margin-bottom:20%;" class="hidden-md    hidden-lg"></div>
           <div id="barrios-select" class="row barrioscontainer">
           <div id="neon-up-1" class="neon-up"></div>
 
@@ -39,9 +41,11 @@
 
                             <% end %>
           </div><br/>
-          <div id="neon-down-2" class="neon-down visible-lg visible-md"></div>
+          <div id="neon-down-2" class="neon-down"></div>
 
           <div style="margin-bottom:40%;" class="visible-md  visible-lg"></div>
+          <div style="margin-bottom:20%;" class="hidden-md    hidden-lg"></div>
+
 
 
           <div id="autocomplete" class="jumbotron container text-center">
