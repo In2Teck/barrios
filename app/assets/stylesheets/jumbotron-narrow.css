@@ -262,7 +262,7 @@ max-width:600px;
 .twitter_log{
   font-family: 'Conv_FuturaStd-CondensedBoldObl';
   margin: 0 auto;
-  max-width: 270px;
+  max-width: 267px;
   background-image:  url('/assets/frame-rojo.png');
   text-align: center;
   padding:30px 25px 40px 30px;
@@ -274,7 +274,7 @@ max-width:600px;
   margin-left: auto;
 }
 .spacing{
-  padding-top: 100px;
+  padding-top: 50px;
 }
 .terms{
   width: 80%;
