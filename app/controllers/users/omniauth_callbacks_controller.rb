@@ -7,7 +7,11 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 			#sign_in_and_redirect @user, :event => :authentication
       sign_in @user
       if @user.neighborhood_id
-        redirect_to :profile
+        if @user.oauth_token
+          redirect_to :profile
+        else
+          redirect_to :twitter_share
+        end
       else
         redirect_to :hood_select
       end
