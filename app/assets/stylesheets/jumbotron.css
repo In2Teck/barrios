@@ -47,6 +47,22 @@ body {
   transform: rotate(-2deg); 
 
 }
+.title-jumbo-soon{
+    padding: 30px;
+  line-height: 1;
+  color: inherit;
+  font-weight: 200;
+  font-size: 53px;
+  line-height: 1;
+  color: inherit;
+  font-weight: 500;
+  max-width: 600px;
+  margin-right: auto;
+  margin-left: auto;
+  font-family: 'Conv_FuturaStd-CondensedBoldObl';
+  transform: rotate(-2deg); 
+
+}
 .sub-jumbo{
 	font-family: 'Conv_FuturaStd-CondensedOblique';
   font-smoothing: antialiased;
@@ -59,12 +75,95 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+.neon-down{
+
+  background-image: url('/assets/btn-a.png');
+  width: 34px;
+  height: 32px;
+  background-repeat:no-repeat;
+  background-size: 34px 32px;
+  margin:0 auto;
+}
+
+.neon-down:hover{
+    background-image: url('/assets/btn-a-on.png');
+    cursor: pointer;
+  background-repeat:no-repeat;
+  margin:0 auto;
+  
+
+}
+.doit
+{
+  width: 132px;
+  height: 64px; 
+}
+.corre-neon{
+  font-family:'NikeNeon',Sans-Serif;
+  color:#00d942;
+  font-size:42px;
+  text-shadow:0 0 #08da48, 0 0 5px #08da48, 0 0 2px #08da48, 0 0 20px #08da48, 0 0 1000px #08da48;
+  
+    
+}
+
+/* AUTOCOMPLETE
+
+
+
+*/
+
+  .ui-autocomplete {
+  max-height: 200px;
+  overflow-y: auto;
+  /* prevent horizontal scrollbar */
+  overflow-x: hidden;
+  background-color:black;
+  opacity:.9;
+  font-family: 'Conv_FuturaStd-MediumCondensed';
+  text-align:center;
+  font-size:28px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border:transparent;
+  text-transform: uppercase;
+  font-smoothing: antialiased;
+  
+
+  }
+  .ui-menu-item{
+    font-size: 15px;
+  }
+  /* IE 6 doesn't support max-height
+   * we use height instead, but this forces the menu to always be this tall
+   */
+  * html .ui-autocomplete {
+    height:200px;
+  }
+
+
+
+/*
+
+AUTOCOMPLETE
+
+*/
+
+
+
+
 @media screen and (max-width: 400px) {
   .barrioimg{width:120px;}
 
 
 .title-jumbo{
   font-size: 33px;
+  margin-top: 10%;
+
+
+}
+.title-jumbo-soon{
+  font-size: 25px;
   margin-top: 10%;
 
 
