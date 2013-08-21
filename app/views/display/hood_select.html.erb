@@ -2,7 +2,12 @@
   <%= stylesheet_link_tag 'bootstrap-3' %>
   <%= stylesheet_link_tag 'jumbotron' %>  
   <%= stylesheet_link_tag 'header' %>
+  <%= stylesheet_link_tag 'autocomplete' %>
+
+
 <% end %> 
+  <%= javascript_include_tag 'zjquery-ui' %>
+
     <div class="jumbotron container text-center">
         <div style="margin-top:7%;" ></div>
         <div class="container back-brick">
@@ -17,13 +22,13 @@
 
         </div>
     </div>
+
+
+
     <div class="container back-brick">
           <div style="margin-bottom:40%;" class="visible-md  visible-lg"></div>
           <div style="margin-bottom:10%;" class="hidden-md    hidden-lg"></div>
-
-
-      <!-- Example row of columns -->
-            <div class="row barrioscontainer">
+          <div class="row barrioscontainer">
      
                             <% @hoods.each do |neighborhood| %>
                                              <div class="col-lg-3 col-sm-4 col-xs-6 text-center">
@@ -31,10 +36,20 @@
                                                         </div>
 
                             <% end %>
-            </div>
+          </div>
           <div style="margin-bottom:40%;" class="visible-md  visible-lg"></div>
 
 
+          <div class="jumbotron container text-center">
+              <div class="title-jumbo">
+                  SI TU BARRIO <br>NO ES UNO DE LOS 12<br> CORRE PARA HACERLO VISIBLE.  
+              </div>
+              <div class="ui-widget">
+                <input id="tags" />
+              </div>
+              <a id="correlink" href=""><div class="corre-neon">CORRE</div></a>
+              <div style="padding-bottom:20%;"> </div>
+          </div>
 
       
 
@@ -50,4 +65,24 @@
               }, 0);
           });
     </script>
+      <script>
+  $(function() {
+    var availableTags = [
+          <% @hoodsall.each do |neighborhoodall| %>
+          {label:"<%= neighborhoodall.name %>",value:"<%= neighborhoodall.id %>"},
+          <% end %>
+     
+    ];
+    $( "#tags" ).autocomplete({
+         select: function(event, ui) {
+        event.preventDefault();
+        $("#tags").val(ui.item.label);
+        $("#correlink").attr("href", "/users/update_hood?neighborhood_id="+ui.item.value+"")
+    },
+      source: availableTags
+
+
+    });
+  });
+  </script>
 
