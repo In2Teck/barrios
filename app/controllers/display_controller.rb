@@ -23,7 +23,7 @@ class DisplayController < ApplicationController
   end
 
   def twitter_share
-    
+   #if it is shared, redirect to profile 
   end
 
   def profile
