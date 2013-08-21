@@ -99,7 +99,7 @@ color: white;
 
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
 .shares{
   display: none;
 }
@@ -112,7 +112,7 @@ color: white;
 
 }
 .nav-pills > li + li > a {
-  margin-left:-20px;
+  margin-left:-10px;
 }
 
 }
