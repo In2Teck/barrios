@@ -262,14 +262,16 @@ max-width:600px;
 .twitter_log{
   font-family: 'Conv_FuturaStd-CondensedBoldObl';
   margin: 0 auto;
-  max-width: 300px;
+  max-width: 270px;
   background-image:  url('/assets/frame-rojo.png');
   text-align: center;
-  padding: 32px 60px 40px 30px;
+  padding:30px 25px 40px 30px;
   font-size: 20px;
   background-repeat: no-repeat;
   font-smoothing: antialiased;
   background-size: 270px 204px;
+  margin-right: auto;
+  margin-left: auto;
 }
 .spacing{
   padding-top: 100px;
