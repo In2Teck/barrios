@@ -28,7 +28,7 @@
     <div class="container back-brick">
           <div style="margin-bottom:40%;" class="visible-md  visible-lg"></div>
           <div style="margin-bottom:10%;" class="hidden-md    hidden-lg"></div>
-          <div class="row barrioscontainer">
+          <div id="barrios-select" class="row barrioscontainer">
      
                             <% @hoods.each do |neighborhood| %>
                                              <div class="col-lg-3 col-sm-4 col-xs-6 text-center">
@@ -36,11 +36,13 @@
                                                         </div>
 
                             <% end %>
-          </div>
+          </div><br/>
+          <div id="neon-down-2" class="neon-down visible-lg visible-md"></div>
+
           <div style="margin-bottom:40%;" class="visible-md  visible-lg"></div>
 
 
-          <div class="jumbotron container text-center">
+          <div id="autocomplete" class="jumbotron container text-center">
               <div class="title-jumbo">
                   SI TU BARRIO <br>NO ES UNO DE LOS 12<br> CORRE PARA HACERLO VISIBLE.  
               </div>
@@ -84,5 +86,18 @@
 
     });
   });
+  </script>
+
+  <script type="text/javascript">
+        $( "#neon-down-1" ).click(function() {
+                $('html, body').animate({
+                scrollTop: $("#barrios-select").offset().top
+                }, 1000);
+         });
+        $( "#neon-down-2" ).click(function() {
+                $('html, body').animate({
+                scrollTop: $("#autocomplete").offset().top
+                }, 1000);
+         });
   </script>
 

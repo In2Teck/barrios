@@ -68,7 +68,7 @@ body {
   font-smoothing: antialiased;
 }
 .barrioimg{
-  width: 190px;
+  width: 170px;
 }
 .barrioscontainer{
   max-width: 800px;
@@ -98,14 +98,7 @@ body {
   width: 132px;
   height: 64px; 
 }
-.corre-neon{
-  font-family:'NikeNeon',Sans-Serif;
-  color:#00d942;
-  font-size:42px;
-  text-shadow:0 0 #08da48, 0 0 5px #08da48, 0 0 2px #08da48, 0 0 20px #08da48, 0 0 1000px #08da48;
-  
-    
-}
+
 
 /* AUTOCOMPLETE
 
@@ -128,7 +121,7 @@ body {
   border:transparent;
   text-transform: uppercase;
   font-smoothing: antialiased;
-  
+
 
   }
   .ui-menu-item{
