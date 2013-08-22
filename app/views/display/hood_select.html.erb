@@ -32,13 +32,15 @@
           <div style="margin-bottom:30%;" class="hidden-md    hidden-lg"></div>
           <div id="neon-up-1" class="neon-up visible-md  visible-lg"></div>
           <div id="barrios-select" class="row barrioscontainer">
-            <div class="barrios_centrados visible-md visible-lg" style="display: table-cell !important">
+            <div class="barrios_centrados_outer visible-md visible-lg" style="display: table !important">
+            <div class="barrios_centrados_inner visible-md visible-lg" style="display: table-cell !important">
               <% @hoods.each do |neighborhood| %>
                 <div class="col-lg-3 col-sm-4 col-xs-6 text-center">
                   <a href="/users/update_hood?neighborhood_id=<%=neighborhood.id%>"><%= image_tag(neighborhood.picture_url_big , :class => "barrioimg") %></a>
                 </div>
               <% end %>
             </div>
+          </div>
           </div>
           <div id="neon-down-2" class="neon-down"></div>
 
@@ -98,9 +100,15 @@
 
   <script type="text/javascript">
         $( "#neon-down-1" ).click(function() {
+              if ($("#neon-up-1").is(':visible')){
                 $('html, body').animate({
                 scrollTop: $("#neon-up-1").offset().top
                 }, 1000);
+              }else{
+                $('html, body').animate({
+                scrollTop: $("#barrios-select").offset().top
+                }, 1000); 
+              }
          });
         $( "#neon-down-2" ).click(function() {
                 $('html, body').animate({
