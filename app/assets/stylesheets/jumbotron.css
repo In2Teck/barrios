@@ -130,6 +130,7 @@ body {
 .barrioscontainer{
   max-width: 800px;
   margin: auto;
+  height: 90vh;
 }
 
 .neon-down{
@@ -272,6 +273,9 @@ AUTOCOMPLETE
 
   .barrioimg{width:120px;}
 
+  .barrioscontainer{
+    height: 100%;
+  }
 
   .title-jumbo{
     font-size: 33px;
@@ -317,7 +321,6 @@ AUTOCOMPLETE
 
 .barrios_centrados_outer {
   display: table;
-  height: 90vh;
 }
 
 .barrios_centrados_inner {
