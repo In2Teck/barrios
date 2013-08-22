@@ -70,6 +70,12 @@ body {
 }
 .barrioimg{
   width: 150px;
+  opacity: .7;
+}
+.barrioimg:hover{
+    opacity: 1;
+
+
 }
 .barrioscontainer{
   max-width: 800px;
@@ -201,7 +207,9 @@ AUTOCOMPLETE
 
 */
 
-
+.compartecarreras{
+  text-decoration: underline;
+}
 
 
 @media screen and (max-width: 400px) {
