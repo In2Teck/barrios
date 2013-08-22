@@ -72,6 +72,56 @@ body {
   width: 150px;
   opacity: .7;
 }
+.table thead > tr > th,
+.table tbody > tr > th,
+.table tfoot > tr > th,
+.table thead > tr > td,
+.table tbody > tr > td,
+.table tfoot > tr > td {
+
+  vertical-align:middle;
+  font-family: 'Conv_FuturaStd-CondensedOblique',Arial;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+
+
+}
+.losquemas{
+  width:540px;
+  height: 64px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url('/assets/los-que-mas-on.png');
+  background-size: 540px 64px;
+  margin-top: -20px;
+}
+.titlebarrios{
+  width:94px;
+  height: 40px;
+  background-image: url('/assets/barrio.png');
+  background-size: 94px 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.titlekms{
+  width:67px;
+  height: 40px;
+  background-image: url('/assets/kms.png');
+  background-size: 67px 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.titlepersonas{
+  width:129px;
+  height: 40px;
+  background-image: url('/assets/personas.png');
+  background-size: 129px 40px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
 .barrioimg:hover{
     opacity: 1;
 
@@ -133,8 +183,14 @@ body {
   cursor: pointer;
   background-repeat:no-repeat;
   margin:0 auto;
-  
-
+}
+.tablebarrios{
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.rankingbarrios{
+  width: 60px;
 }
 
 .shares-social{
@@ -217,24 +273,44 @@ AUTOCOMPLETE
   .barrioimg{width:120px;}
 
 
-.title-jumbo{
-  font-size: 33px;
-  margin-top: 10%;
+  .title-jumbo{
+    font-size: 33px;
+    margin-top: 10%;
 
+
+  }
+  .title-jumbo-soon{
+    font-size: 25px;
+    margin-top: 10%;
+
+
+  }
+  .sub-jumbo{
+    margin-bottom: 20%;
+  }
+  .corre-btn:hover{
+      background-image: url('/assets/corre.png');
+
+  }
+  .losquemas{
+    width:360px;
+    height: 43px;
+    background-size: 360px 43px;
+    margin-top: 20px;
+  }
+  .tablebarrios{
+
+  }
 
 }
-.title-jumbo-soon{
-  font-size: 25px;
-  margin-top: 10%;
+@media screen and (min-width: 401px) and (max-width: 768px)  {
 
-
-}
-.sub-jumbo{
-  margin-bottom: 20%;
-}
-.corre-btn:hover{
-    background-image: url('/assets/corre.png');
-
-}
+    .losquemas
+    {
+    width:450px;
+    height: 54px;
+    background-size: 450px 54px;
+    margin-top: 20px;
+    }
 
 }

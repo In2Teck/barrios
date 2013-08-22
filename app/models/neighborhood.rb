@@ -13,7 +13,7 @@ class Neighborhood < ActiveRecord::Base
   end
   
   def self.total_stats
-    hoods = Neighborhood.includes(:users)
+    hoods = Neighborhood.includes(:users) 
     hoods.each do |hood| 
       stats = hood.stats
       hood["total_kilometers"] = stats[:kilometers]

@@ -1,0 +1,40 @@
+<% content_for :head_style do %>
+  <%= stylesheet_link_tag 'bootstrap-3' %>
+  <%= stylesheet_link_tag 'jumbotron' %>  
+  <%= stylesheet_link_tag 'header' %>
+<% end %> 
+
+    <div class="jumbotron container">
+      <div class="losquemas"></div>
+      <div class="tablebarrios text-center">
+        <table class="table">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th></th>
+
+                    <th><div class="titlebarrios"></div></th>
+                    <th><div class="titlekms"></div></th>
+                    <th><div class="titlepersonas"></div></th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <% @hoodsall.each_with_index do |neighborhood,i| %>
+                    <tr>
+                      
+                      <td><%= i+1 %></td>
+                      <td><%= image_tag(neighborhood.picture_url_big,:class=>"rankingbarrios") if neighborhood.picture_url_big  %></td>
+                      <td><%= neighborhood.name %></td>
+                      <td><%= neighborhood["total_kilometers"] %></td>
+                      <td><%= neighborhood["total_users"] %></td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+          </div>
+      </div>
+
+
+                   
+            

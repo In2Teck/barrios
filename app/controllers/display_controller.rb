@@ -36,7 +36,8 @@ class DisplayController < ApplicationController
   end
 
   def hood_ranking
-
+    @hoodsall = Neighborhood.where("picture_url_big is not null").total_stats.sort_by{|neigh| -neigh.total_kilometers}
+    @ranking = 0
   end
 
   def hood_detail
