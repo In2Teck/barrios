@@ -41,7 +41,7 @@ class DisplayController < ApplicationController
   end
 
   def hood_detail
-
+    @users = User.where("neighborhood_id = ?", params[:id]).paginate(:page => params[:page], :per_page => 20)
   end
 
   def coming_soon

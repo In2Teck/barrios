@@ -28,12 +28,11 @@ TorreCentenario::Application.routes.draw do
 
   match 'profile' => 'display#profile', :as => :profile
 
-  match 'hood_detail' => 'display#hood_detail', :as => :hood_detail
+  match 'hood_detail/:id' => 'display#hood_detail', :as => :hood_detail
   
   match 'coming_soon' => 'display#coming_soon', :as => :coming_soon
 
   match 'hood_ranking' => 'display#hood_ranking', :as => :hood_ranking
-
   
   match 'terms_and_conditions' => 'display#terms_and_conditions', :as => :terms_and_conditions
 
