@@ -294,13 +294,45 @@ AUTOCOMPLETE
 
   }
   .losquemas{
-    width:360px;
-    height: 43px;
-    background-size: 360px 43px;
+    width:320px;
+    height: 39px;
+    background-size: 320px 39px;
     margin-top: 20px;
+    margin-bottom: 10px;
+
   }
   .tablebarrios{
 
+  }
+  .table thead > tr > th,
+  .table tbody > tr > th,
+  .table tfoot > tr > th,
+  .table thead > tr > td,
+  .table tbody > tr > td,
+  .table tfoot > tr > td {
+    font-size: 18px;
+  }
+  .titlepersonas{
+    width:98px;
+    height: 30px;
+    background-size: 98px 30px;
+
+  }
+  .titlebarrios{
+  width:71px;
+  height: 30px;
+  background-image: url('/assets/barrio.png');
+  background-size: 71px 30px;
+  margin-left: auto;
+  margin-right: auto;
+  }
+  .titlekms{
+    width:50px;
+    height: 30px;
+    background-image: url('/assets/kms.png');
+    background-size: 50px 30px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
 }
