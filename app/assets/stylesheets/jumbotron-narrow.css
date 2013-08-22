@@ -21,19 +21,6 @@
 	font-style: normal;
 }
 
-#preloadedImages_narrow{
-  height: 0px;
-  width: 0px;
-  display: inline;
-  background-image: url('/assets/nikehover.png');
-  background-image: url('/assets/login-fbhover.png');
-  background-image: url('/assets/boton-twitter-over.png');
-  background-image: url('/assets/boton-cerrar-over.png');
-  background-image: url('/assets/btn-a-on.png');
-  background-image: url('/assets/btn-up-on.png');
-  background-image: url();
-}
-
 /* Space out content a bit */
 body {
 }
@@ -140,37 +127,34 @@ body {
 .btn-nike{
   background-image: url('/assets/nike.png');
   width: 182px;
-  height: 35px;
+  height: 41px;
   letter-spacing: 82px;
   background-repeat: no-repeat;
   padding: 4px;
 	display:inline-block;
-  background-size: 188px 45px;  
+  background-size: 100%;  
 
 }
 .btn-nike:hover{
   text-decoration: none !important;
-  background-image: url('/assets/nikehover.png');
-  background-size: 188px 45px;  
+  //background-image: url('/assets/nikehover.png');
+  background-position: 0 -40px;  
 }
 
 .btn-facebook{
   background-image: url('/assets/login-fb.png');
   width: 182px;
-  height: 35px;
+  height: 41px;
   letter-spacing: 82px;
   background-repeat: no-repeat;
   padding: 4px;
 	display:inline-block;
-  background-size: 188px 45px;  
+  background-size: 100%;  
 
 }
 .btn-facebook:hover{
   text-decoration: none !important;
-  background-image: url('/assets/login-fbhover.png');
-  background-size: 188px 45px;  
-
-
+  background-position: 0 -40px;
 }
 .btn-twitter{
   background-image: url('/assets/boton-twitter-normal.png');
