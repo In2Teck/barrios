@@ -204,6 +204,9 @@ body {
   margin-right: auto;
 
 }
+.fbimage{
+  border:5px solid white;
+}
 .tableusers{
   max-width: 700px;
   margin-left: auto;

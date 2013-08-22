@@ -1,9 +1,5 @@
 
-  <%= will_paginate @users %>
 
-  <% @users.each do |user|%>
-    <p><%= user.first_name %></p>
-  <% end%>
 
 <% content_for :head_style do %>
   <%= stylesheet_link_tag 'bootstrap-3' %>
@@ -12,7 +8,7 @@
 <% end %> 
 
     <div class="jumbotron container">
-      <div class="losquemas"></div>
+      <div class="losquemas-users"></div>
       <div class="tableusers text-center">
         <table class="table">
                 <thead>
@@ -24,23 +20,20 @@
                   </tr>
                 </thead>
                 <tbody>
+  					<%= will_paginate @users %>
 
-                  <%# @hoodsall.each_with_index do |neighborhood,i| %>
+  					<% @users.each_with_index do |user,i|%>
+
                     <tr>
                       
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
+                      <td><%= i+1%></td>
+                      <td><%= image_tag("http://graph.facebook.com/"+user.facebook_id+"/picture" ,:class=> 'fbimage') %></td>
+                      <td><%= user.first_name %></td>
+                      <td><%= user.kilometers %></td>
                     </tr>
-                  <%# end %>
+                  <% end %>
+
                 </tbody>
               </table>
           </div>
       </div>
-
-
-                   
-            
->>>>>>> Stashed changes
