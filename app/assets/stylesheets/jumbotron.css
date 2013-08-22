@@ -129,8 +129,9 @@ body {
 }
 .barrioscontainer{
   max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
+  display: table;
+  height: 90vh;
 }
 .neon-down{
 
@@ -313,4 +314,9 @@ AUTOCOMPLETE
     margin-top: 20px;
     }
 
+}
+
+.barrios_centrados{
+    display: table-cell;
+    vertical-align: middle;
 }

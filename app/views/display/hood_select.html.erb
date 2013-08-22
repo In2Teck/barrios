@@ -30,17 +30,16 @@
     <div class="container back-brick">
           <div style="margin-bottom:40%;" class="visible-md  visible-lg"></div>
           <div style="margin-bottom:30%;" class="hidden-md    hidden-lg"></div>
-          <div id="barrios-select" class="row barrioscontainer">
           <div id="neon-up-1" class="neon-up visible-md  visible-lg"></div>
-
-     
-                            <% @hoods.each do |neighborhood| %>
-                                             <div class="col-lg-3 col-sm-4 col-xs-6 text-center">
-                                  <a href="/users/update_hood?neighborhood_id=<%=neighborhood.id%>"><%= image_tag(neighborhood.picture_url_big , :class => "barrioimg") %></a>
-                                                        </div>
-
-                            <% end %>
-          </div><br/>
+          <div id="barrios-select" class="row barrioscontainer">
+            <div class="barrios_centrados visible-md visible-lg" style="display: table-cell !important">
+              <% @hoods.each do |neighborhood| %>
+                <div class="col-lg-3 col-sm-4 col-xs-6 text-center">
+                  <a href="/users/update_hood?neighborhood_id=<%=neighborhood.id%>"><%= image_tag(neighborhood.picture_url_big , :class => "barrioimg") %></a>
+                </div>
+              <% end %>
+            </div>
+          </div>
           <div id="neon-down-2" class="neon-down"></div>
 
           <div style="margin-bottom:40%;" class="visible-md  visible-lg"></div>
@@ -69,6 +68,7 @@
    
     </div> <!-- /container -->
     <script type="text/javascript">
+
           window.addEventListener("load",function() {
               setTimeout(function(){
                   window.scrollTo(0, 1);
@@ -99,7 +99,7 @@
   <script type="text/javascript">
         $( "#neon-down-1" ).click(function() {
                 $('html, body').animate({
-                scrollTop: $("#barrios-select").offset().top
+                scrollTop: $("#neon-up-1").offset().top
                 }, 1000);
          });
         $( "#neon-down-2" ).click(function() {
@@ -114,7 +114,7 @@
          });
           $( "#neon-up-2" ).click(function() {
                 $('html, body').animate({
-                scrollTop: $("#barrios-select").offset().top
+                scrollTop: $("#neon-up-1").offset().top
                 }, 1000);
          });
 
