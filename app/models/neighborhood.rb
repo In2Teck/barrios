@@ -3,7 +3,7 @@ class Neighborhood < ActiveRecord::Base
   has_many :users
 
   def stats
-    hood_total_km = 0
+    hood_total_km = 0.0
     hood_total_users = 0
     self.users.each do |user|
       hood_total_km += user.kilometers
