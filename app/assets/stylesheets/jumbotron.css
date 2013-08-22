@@ -130,6 +130,7 @@ body {
 .barrioscontainer{
   max-width: 800px;
   margin: auto;
+  display: table;
   height: 90vh;
 }
 
@@ -274,6 +275,7 @@ AUTOCOMPLETE
   .barrioimg{width:120px;}
 
   .barrioscontainer{
+    display: inline;
     height: 100%;
   }
 
@@ -351,11 +353,7 @@ AUTOCOMPLETE
 
 }
 
-.barrios_centrados_outer {
-  display: table;
-}
-
 .barrios_centrados_inner {
-    display: table-cell;
-    vertical-align: middle;
+  display: table-cell;
+  vertical-align: middle;
 }
