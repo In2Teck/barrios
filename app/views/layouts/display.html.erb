@@ -22,6 +22,16 @@
     <%= javascript_include_tag "application" %>
     <%= yield :head_script %>
     <%= csrf_meta_tags %>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-43385526-1', 'werunmexico.com');
+  ga('send', 'pageview');
+
+</script>
 </head>
 <body>
       <div class="header">
@@ -30,7 +40,7 @@
               <li><a class="homebutton" href="http://www.nike.com/mx/es_la/" target="_blank" ></a></li>
               <li><a href="/">ABOUT</a></li>
               <!-- <li><a href="#">RANKING</a></li> -->
-              <li><a href="/terms_and_conditions">TERMINOS</a></li>
+              <li><a href="/terms_and_conditions">TÉRMINOS</a></li>
             </ul>
             <ul class="shares">
               <% if user_signed_in? %>
