@@ -27,6 +27,20 @@
 	font-weight: normal;
 	font-style: normal;
 }
+
+#preloadedImages{
+  height: 0px;
+  width: 0px;
+  display: inline;
+  background-image: url('/assets/btn-a-on.png'); 
+  background-image: url('/assets/correhover.png');
+  background-image: url('/assets/btn-up-on.png');
+  background-image: url('/assets/comparte-over.png');
+  background-image: url('/assets/tweet-over.png');
+  background-image: url('/assets/corre.png');
+  background-image: url();
+}
+
 body {
   padding-top: 0px;
   padding-bottom: 0px;

@@ -4,7 +4,9 @@ class DisplayController < ApplicationController
   authorize_resource :class => false
 
 	def index
-
+    if current_user
+      redirect_to :hood_select
+    end
 	end
 
   def hood_select

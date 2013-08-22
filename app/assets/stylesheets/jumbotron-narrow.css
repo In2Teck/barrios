@@ -21,7 +21,18 @@
 	font-style: normal;
 }
 
-
+#preloadedImages_narrow{
+  height: 0px;
+  width: 0px;
+  display: inline;
+  background-image: url('/assets/nikehover.png');
+  background-image: url('/assets/login-fbhover.png');
+  background-image: url('/assets/boton-twitter-over.png');
+  background-image: url('/assets/boton-cerrar-over.png');
+  background-image: url('/assets/btn-a-on.png');
+  background-image: url('/assets/btn-up-on.png');
+  background-image: url();
+}
 
 /* Space out content a bit */
 body {
@@ -126,7 +137,6 @@ body {
 
 }
 
-
 .btn-nike{
   background-image: url('/assets/nike.png');
   width: 182px;
@@ -142,9 +152,6 @@ body {
   text-decoration: none !important;
   background-image: url('/assets/nikehover.png');
   background-size: 188px 45px;  
-
-
-
 }
 
 .btn-facebook{
