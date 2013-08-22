@@ -32,7 +32,7 @@
           <div style="margin-bottom:30%;" class="hidden-md    hidden-lg"></div>
           <div id="neon-up-1" class="neon-up visible-md  visible-lg"></div>
           <div id="barrios-select" class="row barrioscontainer">
-            <div class="barrios_centrados">
+            <div class="barrios_centrados visible-md visible-lg" style="display: table-cell !important">
               <% @hoods.each do |neighborhood| %>
                 <div class="col-lg-3 col-sm-4 col-xs-6 text-center">
                   <a href="/users/update_hood?neighborhood_id=<%=neighborhood.id%>"><%= image_tag(neighborhood.picture_url_big , :class => "barrioimg") %></a>
@@ -68,13 +68,6 @@
    
     </div> <!-- /container -->
     <script type="text/javascript">
-       /* $(function() {
-          $(window).resize(function() {
-            var docHeight = $(document).height();
-            $('#barrios_centrados').height(docHeight);
-          });
-          $(window).resize();
-        });*/
 
           window.addEventListener("load",function() {
               setTimeout(function(){
