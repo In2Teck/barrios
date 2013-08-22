@@ -98,9 +98,15 @@
 
   <script type="text/javascript">
         $( "#neon-down-1" ).click(function() {
+              if ($("#neon-up-1").is(':visible')){
                 $('html, body').animate({
                 scrollTop: $("#neon-up-1").offset().top
                 }, 1000);
+              }else{
+                $('html, body').animate({
+                scrollTop: $("#barrios-select").offset().top
+                }, 1000); 
+              }
          });
         $( "#neon-down-2" ).click(function() {
                 $('html, body').animate({

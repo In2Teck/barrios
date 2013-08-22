@@ -315,8 +315,7 @@ AUTOCOMPLETE
     }
 
 }
-
-.barrios_centrados{
+.barrios_centrados {
     display: table-cell;
     vertical-align: middle;
 }
