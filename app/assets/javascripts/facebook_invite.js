@@ -24,7 +24,7 @@ function getFriendsParticipating(app_key, access_token){
 
 function sendInvites() {
   FB.ui({method: 'apprequests',
-    message: 'Acepta esta invitación y apoya a tu amigo a estar MÁS CERCA DEL CIELO con Tequila Centenario.',
+    message: 'Yo ya estoy corriendo por '+ hood_name +'. Te reto a que corras por tu barrio.',
     exclude_ids: ids
     }, function(){
     // termino
