@@ -93,7 +93,7 @@ class User < ActiveRecord::Base
         original_url = twitt.attrs[:text].match("(http://.*)[ ]")[1]
         final_url = open(original_url, :allow_redirections => :all).base_uri.path
         if not Run.find_by_run_id(final_url.split("/").last)
-          tw_run = Run.new(:user_id => self.id, :run_url => original_url, :run_id => final_url.split("/").last, :kilometers => distance_in_km_for_tw(twitt.attrs[:text].match("([0-9]*[.][0-9]*[ ]*)(mi|km)")), :published_date => twitt.attrs[:created_at], :accounted => false)
+          tw_run = Run.new(:user_id => self.id, :run_url => original_url, :run_id => final_url.split("/").last, :kilometers => distance_in_km_for_tw(twitt.attrs[:text].match("([0-9]*[.,][0-9]*[ ]*)(mi|km)")), :published_date => twitt.attrs[:created_at], :accounted => false)
           tw_run.save!
         end
       end
