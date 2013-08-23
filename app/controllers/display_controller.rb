@@ -1,6 +1,6 @@
 class DisplayController < ApplicationController
   
-  before_filter :authenticate_user!, :except => [:index, :terms_and_conditions]
+  before_filter :authenticate_user!, :except => [:index, :terms_and_conditions, :hood_ranking, :hood_detail]
   authorize_resource :class => false
 
 	def index
@@ -31,8 +31,7 @@ class DisplayController < ApplicationController
 
   def profile
     #Before release
-    redirect_to :coming_soon 
-    #@runs = current_user.runs if current_user.runs
+    #redirect_to :coming_soon 
   end
 
   def hood_ranking

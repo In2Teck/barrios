@@ -1,5 +1,4 @@
-
-	<style>
+<style>
 	.foto-perfil{
 		border:6px solid white;
 		width: 142px;
@@ -19,67 +18,35 @@ margin: 0 auto;
 	text-shadow:0 0 red, 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 1000px red;
 	
 	}
-	</style>
-    <div class="container-narrow">
-
-
-    <div id="perfil" class="jumbotron barrios perfil-c" >
-    		<div class="corre-neon">
-    		MI PERFIL
-    		</div>
-
-
-  <div class="row marketing">
-    <div class="col col-lg-6">
-
-		<div class="foto-perfil"><%= image_tag("https://graph.facebook.com/"+current_user.facebook_id+"/picture?width=121&height=121", alt: "Foto de perfil") %> </div>
-		    	<%= current_user.first_name %>
-		<%= current_user.last_name %><br>
-		<div class="red">KM:</div><%= current_user.kilometers %><br>
-
+</style>
+<% content_for :head_script do %>
+  <%= javascript_include_tag 'facebook_invite' %>
+<% end %> 
+<div class="container-narrow">
+  <div id="perfil" class="jumbotron barrios perfil-c" >
+    <div class="corre-neon">
+    MI PERFIL
     </div>
-    <div class="col col-lg-6">
-
-		<%= image_tag(current_user.neighborhood.picture_url_thumb) %><br>
-
+    <div class="row marketing">
+      <div class="col col-lg-6">
+  		<div class="foto-perfil"><%= image_tag("https://graph.facebook.com/"+current_user.facebook_id+"/picture?width=100&height=100", alt: "Foto de perfil") %> </div>
+	   	<%= current_user.first_name %>
+		  <%= current_user.last_name %><br>
+		  <div class="red">KM:</div><%= current_user.kilometers %><br>
+      </div>
+      <div class="col col-lg-6">
+  	  	<%= image_tag(current_user.neighborhood.picture_url_big) %><br>
+      </div>
     </div>
+  	Estos son tus amigos corriendo por su barrio
+    <div id="friends"></div>
+    <a href= "#" id="invite-friends">Invita amigos</a>
+    </br>
   </div>
-	
-
-	
-
-
-	Estos son tus amigos corriendo por su barrio
-	<div id="friends">
-	</div>
-
-
-
-
-
-	<script>
-$.getJSON('https://api.facebook.com/method/fql.query?query=SELECT%20uid,%20name%20FROM%20user%20WHERE%20uid%20IN%20%28SELECT%20uid2%20FROM%20friend%20WHERE%20uid1%20=%20me%28%29%29%20AND%20is_app_user%20=178205172320915&access_token=CAAISUKXMOE4BAHtZBLrdf2S2eXjj1qZC50nuZCaowlZCZBPpHANhBFqwoILEk4TOeB11s6m0GLnwIlZB3ZB4dm1DBrsiEbVbLniZA5ZAbNzYrqWFVQbFtmOlNeyLshQH07OYJCx7G5CNVF4jGq84tRZBGPUKpc7Dm86K4ZD&format=json', function(data) {
-  var items = [];
- console.log(data[0].uid);
-  console.log(data.length);
-
-  $.each(data, function(key, val) {
-    items.push('<img src="https://graph.facebook.com/' + val.uid + '/picture?width=50&height=50"/>');
-  });
-  console.log(items);
-
-
-for (var i = 0; i <= items.length ; i++) {
-	$( "#friends" ).append( items[i] );
-
-};
-
-});
+</div>
+<div id="fb-root"></div>
+<script>
+  var ids = [];
+  var app_key = '<%= ENV['FACEBOOK_APP_KEY'] %>';
+  var access_token = '<%= current_user.access_token %>';
 </script>
-</br>
-</div>
-</div>
-
-
-
-
