@@ -442,4 +442,17 @@ AUTOCOMPLETE
   display: table-cell;
   vertical-align: middle;
 }
+/*disabled button for will_paginate*/
+.disabled{
+  display: none;
+}
 
+.linkbarrio {
+  text-decoration: none;
+  color: white;
+}
+
+.linkbarrio:hover {
+  text-decoration: underline;
+  color: white;
+}

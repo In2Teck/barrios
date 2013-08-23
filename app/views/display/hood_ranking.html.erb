@@ -24,8 +24,8 @@
                     <tr>
                       
                       <td><%= i+1 %></td>
-                      <td><%= image_tag(neighborhood.picture_url_big,:class=>"rankingbarrios") if neighborhood.picture_url_big  %></td>
-                      <td><%= neighborhood.name %></td>
+                      <td><%= link_to image_tag(neighborhood.picture_url_big,:class=>"rankingbarrios") , hood_detail_path(neighborhood.id), :class => 'linkbarrio' %></td>
+                      <td><%= link_to neighborhood.name, hood_detail_path(neighborhood.id), :class => 'linkbarrio' %></td>
                       <td><%= neighborhood["total_kilometers"] %></td>
                       <td><%= neighborhood["total_users"] %></td>
                     </tr>

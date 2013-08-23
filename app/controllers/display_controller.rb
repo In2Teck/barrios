@@ -31,7 +31,10 @@ class DisplayController < ApplicationController
 
   def profile
     #Before release
-    #redirect_to :coming_soon 
+    redirect_to :coming_soon
+    #if not current_user.neighborhood_id
+    #  redirect_to :hood_select
+    #end
   end
 
   def hood_ranking
@@ -41,7 +44,7 @@ class DisplayController < ApplicationController
 
   def hood_detail
     @current_hood = Neighborhood.find(params[:id])
-    @users = User.where("neighborhood_id = ?", params[:id]).order('kilometers desc').paginate(:page => params[:page], :per_page => 1)
+    @users = User.where("neighborhood_id = ?", params[:id]).order('kilometers desc').paginate(:page => params[:page], :per_page => 20)
   end
 
   def coming_soon
