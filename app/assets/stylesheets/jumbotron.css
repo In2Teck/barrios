@@ -152,14 +152,15 @@ body {
 }
 .corre-btn{
   background-image: url('/assets/corre.png');
-  background-size: 146px 55px;
+  background-size: 100%;
+  background-repeat: no-repeat;
   width:146px;
   height:  55px;
   margin-top:20px;
+  background-position: 0 0;
 }
 .corre-btn:hover{
-    background-image: url('/assets/correhover.png');
-
+  background-position: 0 -55px;
 }
 .neon-up-new{
 
@@ -232,24 +233,24 @@ margin-left: auto;
   text-decoration: none;
 }
 .share-facebook{
-background-image: url('/assets/comparte-normal.png');
+background-image: url('/assets/comparte.png');
 width:97px;
 height: 37px;
-background-size: 97px 37px;
+background-size: 100%;
 float: right;
 }
 .share-facebook:hover{
-background-image: url('/assets/comparte-over.png');
+background-position: 0 -37px;
 }
 .share-twitter{
-background-image: url('/assets/tweet-normal.png');
+background-image: url('/assets/tweet.png');
 width:97px;
 height: 37px;
-background-size: 97px 37px;
+background-size: 100%;
 
 }
 .share-twitter:hover{
-background-image: url('/assets/tweet-over.png');
+background-position: 0 -37px;
 }
 
 .current_hood_picture{
