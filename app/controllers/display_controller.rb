@@ -41,7 +41,8 @@ class DisplayController < ApplicationController
   end
 
   def hood_detail
-    @users = User.where("neighborhood_id = ?", params[:id]).paginate(:page => params[:page], :per_page => 20)
+    @current_hood = Neighborhood.find(params[:id])
+    @users = User.where("neighborhood_id = ?", params[:id]).order('kilometers desc').paginate(:page => params[:page], :per_page => 1)
   end
 
   def coming_soon

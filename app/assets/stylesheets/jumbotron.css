@@ -20,13 +20,6 @@
   font-weight: normal;
   font-style: normal;
 }
-@font-face {
-	font-family: 'NikeNeon';
-	src: url('Nikeneon-Regular.eot');
-	src: local('☺'), url('Nikeneon-Regular.woff') format('woff'), url('Nikeneon-Regular.ttf') format('truetype'), url('Nikeneon-Regular.svg') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
 
 body {
   padding-top: 0px;
@@ -168,7 +161,22 @@ body {
     background-image: url('/assets/correhover.png');
 
 }
+.neon-up-new{
 
+  background-image: url('/assets/btn-up-2.png');
+  width: 34px;
+  height: 32px;
+  background-repeat:no-repeat;
+  background-size: 34px 32px;
+  margin:0 auto;
+}
+
+.neon-up-new:hover{
+  background-image: url('/assets/btn-up-on.png');
+  cursor: pointer;
+  background-repeat:no-repeat;
+  margin:0 auto;
+}
 
 .neon-up{
 
@@ -205,7 +213,10 @@ body {
 
 }
 .fbimage{
-  border:5px solid white;
+  border:3px solid white;
+  width: 40px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 .tableusers{
   max-width: 700px;
@@ -240,6 +251,56 @@ background-size: 97px 37px;
 .share-twitter:hover{
 background-image: url('/assets/tweet-over.png');
 }
+
+.current_hood_picture{
+  width: 60px;
+}
+.table-namebarrios{
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+ .table-namebarrios thead > tr > th,
+  .table-namebarrios tbody > tr > th,
+  .table-namebarrios tfoot > tr > th,
+  .table-namebarrios thead > tr > td,
+  .table-namebarrios tbody > tr > td,
+  .table-namebarrios tfoot > tr > td {
+    border:none;
+    text-align: center;
+  }
+.total-kms{
+  width:71px;
+  height: 35px;
+  background-image: url('/assets/total.png');
+  background-size: 71px 35px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.center-row{
+  margin-right: -10px;
+}
+
+
+/* PAGINATE
+
+
+
+*/
+#next{
+  width: 40px;
+  height: 40px;
+  background-color: yellow;
+
+}
+#previous{
+    width: 40px;
+  height: 40px;
+  background-color: red;
+
+}
+
+
 /* AUTOCOMPLETE
 
 
@@ -356,7 +417,14 @@ AUTOCOMPLETE
     margin-left: auto;
     margin-right: auto;
   }
-
+  .total-kms{
+  width:53px;
+  height: 30px;
+  background-image: url('/assets/total.png');
+  background-size: 53px 30px;
+  margin-left: auto;
+  margin-right: auto;
+  }
 }
 @media screen and (min-width: 401px) and (max-width: 768px)  {
 
@@ -374,3 +442,4 @@ AUTOCOMPLETE
   display: table-cell;
   vertical-align: middle;
 }
+
