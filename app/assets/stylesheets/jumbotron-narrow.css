@@ -157,9 +157,9 @@ body {
   background-position: 0 -40px;
 }
 .btn-twitter{
-  background-image: url('/assets/boton-twitter-normal.png');
+  background-image: url('/assets/boton-twitter.png');
   width: 182px;
-  height: 35px;
+  height: 37px;
   letter-spacing: 82px;
   background-repeat: no-repeat;
   padding: 4px;
@@ -168,13 +168,12 @@ body {
 }
 .btn-twitter:hover{
   text-decoration: none !important;
-  background-image: url('/assets/boton-twitter-over.png');
-
+  background-position: 0 -37px;
 }
 .btn-cerrar{
-  background-image: url('/assets/boton-cerrar-normal.png');
+  background-image: url('/assets/boton-cerrar.png');
   width: 182px;
-  height: 35px;
+  height: 37px;
   letter-spacing: 82px;
   background-repeat: no-repeat;
   padding: 4px;
@@ -183,7 +182,7 @@ body {
 }
 .btn-cerrar:hover{
   text-decoration: none !important;
-  background-image: url('/assets/boton-cerrar-over.png');
+  background-position: 0 -37px;
 
 }
 .neon-a{
