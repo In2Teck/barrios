@@ -1,48 +1,50 @@
-<style>
-	.foto-perfil{
-		border:6px solid white;
-		width: 142px;
-		margin:0 auto;
-	}
-	.perfil-c{
-  font-family: 'Conv_FuturaStd-MediumCondensed',Sans-Serif;
-	}
-	.marketing{
-		width: 600px;
-margin: 0 auto;
-	}
-	.red{
-		font-family:'NikeNeon',Sans-Serif;
-	color:red;
-	font-size:42px;
-	text-shadow:0 0 red, 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 1000px red;
-	
-	}
-</style>
+<% content_for :head_style do %>
+  <%= stylesheet_link_tag 'bootstrap-3' %>
+  <%= stylesheet_link_tag 'jumbotron' %>  
+  <%= stylesheet_link_tag 'header' %>
+<% end %> 
 <% content_for :head_script do %>
   <%= javascript_include_tag 'facebook_invite' %>
 <% end %> 
-<div class="container-narrow">
-  <div id="perfil" class="jumbotron barrios perfil-c" >
-    <div class="corre-neon">
-    MI PERFIL
+<div class="container">
+    <div id="perfil" class="profile text-center" >
+        <div class="miperfil">
+            
+        </div>
+        <div class="">
+            <div class="col-md-4 fotoperfilabajo">
+            		<div class="fotoperfilabajo"><%= image_tag("https://graph.facebook.com/"+current_user.facebook_id+"/picture?width=120&height=120", alt: "Foto de perfil", :class=>'foto-perfil') %> 
+                </div>
+                <div class="wholekm">
+                <div class="titlekms col-md-6"></div>
+                  <div class="current-km col-md-6"><%= current_user.kilometers %></div>
+                </div> 
+            </div>
+            <div class="col-md-2 textoperfilabajo">
+                <div class="text-left visible-lg visible-md">
+                  <%= current_user.first_name %><br>
+                  <%= current_user.last_name %>
+                </div>
+                <div class=" hidden-lg hidden-md">
+
+
+                     <%= current_user.first_name %>
+                  <%= current_user.last_name %><br>
+                </div>
+            </div>
+            <div class="col-md-6">
+        	  	    <%= image_tag(current_user.neighborhood.picture_url_big,:class=>'shieldprofile') %><br>
+            </div>
+        </div>
+        <div class="friend-invite text-center">
+            Amigos que también están corriendo por su barrio
+            <div id="friends"></div>
+            <a href= "#" id="invite-friends">Reta a tus amigos.</a>
+            </br>
+        </div>
     </div>
-    <div class="row marketing">
-      <div class="col col-lg-6">
-  		<div class="foto-perfil"><%= image_tag("https://graph.facebook.com/"+current_user.facebook_id+"/picture?width=100&height=100", alt: "Foto de perfil") %> </div>
-	   	<%= current_user.first_name %>
-		  <%= current_user.last_name %><br>
-		  <div class="red">KM:</div><%= current_user.kilometers %><br>
-      </div>
-      <div class="col col-lg-6">
-  	  	<%= image_tag(current_user.neighborhood.picture_url_big) %><br>
-      </div>
-    </div>
-  	Estos son tus amigos corriendo por su barrio
-    <div id="friends"></div>
-    <a href= "#" id="invite-friends">Invita amigos</a>
-    </br>
-  </div>
+    <div style="margin-bottom:30%;" </div>
+
 </div>
 <div id="fb-root"></div>
 <script>

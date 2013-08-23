@@ -280,7 +280,73 @@ background-image: url('/assets/tweet-over.png');
 .center-row{
   margin-right: -10px;
 }
+.profile{
+  max-width: 600px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.miperfil{
+  width:199px;
+  height: 54px;
+  background-image: url('/assets/mi-perfil.png');
+  background-size: 199px 54px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+.foto-perfil{
+  border:5px solid white;
+}
+.fotoperfilabajo{
+  margin-top: 20px;
 
+
+}
+.textoperfilabajo{
+    margin-top: 35px;
+
+  font-family:  'Conv_FuturaStd-CondensedOblique', Arial;
+    font-smoothing: antialiased;
+
+  font-size: 28px;
+}
+.current-km{
+  font-family:  'Conv_FuturaStd-CondensedOblique', Arial;
+  font-smoothing: antialiased;
+  font-size: 24px;
+
+}
+.wholekm{
+margin-top: 20px;
+margin-left: 10px;}
+.floatleft{
+  float: left;
+}
+.friend-invite{
+  font-family:  'Conv_FuturaStd-CondensedOblique', Arial;
+    font-smoothing: antialiased;
+
+  font-size: 18px;
+  padding-top: 40px;
+  clear: both;
+}
+.alreadyfriends{
+margin-top: 20px;
+border:2px solid white;
+box-shadow: 3px;
+margin-right: 20px;
+margin-bottom: 20px;
+
+
+}
+
+.shieldprofile{
+  width: 200px;
+}
+#invite-friends{
+  margin-top: 30px;
+}
 
 /* PAGINATE
 
@@ -424,6 +490,9 @@ AUTOCOMPLETE
   background-size: 53px 30px;
   margin-left: auto;
   margin-right: auto;
+  }
+  .floatleft{
+
   }
 }
 @media screen and (min-width: 401px) and (max-width: 768px)  {

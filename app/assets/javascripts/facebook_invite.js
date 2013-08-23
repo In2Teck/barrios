@@ -8,11 +8,12 @@ function init(){
 
 function getFriendsParticipating(app_key, access_token){
   ids = [];
-  $.getJSON('https://api.facebook.com/method/fql.query?query=SELECT uid, name FROM user WHERE uid IN (SELECT uid2 FROM friend WHERE uid1=me()) AND is_app_user='+app_key+'&access_token='+access_token+'&format=json', function(data) {
+  $.getJSON('https://api.facebook.com/method/fql.query?query=SELECT uid, name FROM user WHERE uid IN (SELECT uid2 FROM friend WHERE uid1=me()) AND is_app_user='+app_key+' LIMIT 8&access_token='+access_token+'&format=json', function(data) {
     var items = [];
     $.each(data, function(key, val) {
       ids.push(val.uid);
-      items.push('<img src="https://graph.facebook.com/' + val.uid + '/picture?width=50&height=50"/>');
+      items.push('<img class="alreadyfriends" src="https://graph.facebook.com/' + val.uid + '/picture?width=50&height=50"/>');
+      
     });
     for (var i = 0; i <= items.length ; i++) {
       $( "#friends" ).append( items[i] );
