@@ -44,7 +44,7 @@
             </ul>
             <ul class="shares">
               <% if user_signed_in? %>
-                <li><%= current_user.first_name %></li>
+                <li><%= image_tag('avatar.png',:class=>"avatar")%><%= current_user.first_name %></li>
               <% end %>
                 <li><%= link_to image_tag("/assets/tw.png", :style => "width: 17px; height:16px;"), 'http://twitter.com/nikecorremx', :target => "_blank" %></li>
                 <li><%= link_to image_tag("/assets/fb.png", :style => "width: 17px; height:16px;"), 'http://www.facebook.com/nikecorre', :target => "_blank" %></li>

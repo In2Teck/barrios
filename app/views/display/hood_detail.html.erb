@@ -10,7 +10,7 @@
            <table class="table ">
                 <thead>
                   <tr>
-                    <th><%=  image_tag(@current_hood.picture_url_big ,:class=>'current_hood_picture')%></th>
+                    <th><%=  image_tag(@current_hood.picture_url_big ,:class=>'current_hood_picture')  if @current_hood.picture_url_big %></th>
                     <th><%=  @current_hood.name %></th>
                     <th><div class="center-row"><div class="total-kms"></div><%=  @current_hood.stats[:kilometers] %></div></th>
                   </tr>

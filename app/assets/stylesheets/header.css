@@ -75,6 +75,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', end
 
 
 }
+.avatar{
+  width: 13px;
+  margin-right: 2px;
+}
 
 
 
