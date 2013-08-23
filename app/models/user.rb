@@ -116,6 +116,7 @@ class User < ActiveRecord::Base
     elsif distance[1] == "kilometers"
       return distance[0].to_f
     else
+      User.log_parse_error "distance_string #{distance_string}"
       raise distance_string
     end
   end
@@ -144,6 +145,14 @@ class User < ActiveRecord::Base
   def self.log_user_run current_user, run
     begin
       User.runs_logger.error("#{Time.now.in_time_zone('Central Time (US & Canada)').to_formatted_s(:short)} user: #{current_user.id}, run: #{run}")
+    rescue
+      logger.error "The custom try_logger is not working."
+    end
+  end
+
+  def self.log_parse_error error
+    begin
+      User.runs_logger.error("#{Time.now.in_time_zone('Central Time (US & Canada)').to_formatted_s(:short)} error: #{error}")
     rescue
       logger.error "The custom try_logger is not working."
     end
