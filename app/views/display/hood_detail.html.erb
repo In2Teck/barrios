@@ -3,7 +3,6 @@
   <%= stylesheet_link_tag 'jumbotron' %>  
   <%= stylesheet_link_tag 'header' %>
 <% end %> 
-
     <div class="jumbotron container">
       <div class="table-namebarrios text-center">
 
@@ -30,12 +29,10 @@
                 </thead>
                 <tbody>
   					<% @users.each_with_index do |user,i|%>
-
                     <tr>
-                      
-                      <td><%= i+1%></td>
-                      <td><%= image_tag("http://graph.facebook.com/"+user.facebook_id+"/picture" ,:class=> 'fbimage') %></td>
-                      <td><%= user.first_name %></td>
+                      <td><%= i+1+@users.offset%></td>
+                      <td><%= link_to image_tag("http://graph.facebook.com/"+user.facebook_id+"/picture" ,:class=> 'fbimage'), "http://facebook.com/" + user.facebook_id, :class => 'linkbarrio', :target => "_blank" %></td>
+                      <td><%= link_to user.first_name, "http://facebook.com/" + user.facebook_id, :class => 'linkbarrio', :target => "_blank" %></td>
                       <td><%= user.kilometers %></td>
                     </tr>
                   <% end %>
@@ -43,11 +40,9 @@
                 </tbody>
               </table>
 
-              <%= will_paginate @users , :page_links => false, :previous_label => '<div class="neon-down pull-right"></div>
-', :next_label => '<div class="neon-up-new pull-right"></div>
+              <%= will_paginate @users , :page_links => false, :next_label => '<div class="neon-down pull-right"></div>
+', :previous_label => '<div class="neon-up-new pull-right"></div>
 '  %>
-
           </div>
-            <div style="margin-bottom:30%;" </div>
-
+          <div style="margin-bottom:30%;"> </div>
       </div>

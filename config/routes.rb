@@ -22,19 +22,19 @@ TorreCentenario::Application.routes.draw do
     match 'update_hood', :on => :collection
   end
 
-  match 'hood_select' => 'display#hood_select', :as => :hood_select
+  match 'selecciona_barrio' => 'display#hood_select', :as => :hood_select
 
-  match 'twitter_share' => 'display#twitter_share', :as => :twitter_share
+  match 'ingresa_twitter' => 'display#twitter_share', :as => :twitter_share
 
-  match 'profile' => 'display#profile', :as => :profile
+  match 'perfil' => 'display#profile', :as => :profile
 
-  match 'hood_detail/:id' => 'display#hood_detail', :as => :hood_detail
+  match 'barrio/:id' => 'display#hood_detail', :as => :hood_detail
   
-  match 'coming_soon' => 'display#coming_soon', :as => :coming_soon
+  match 'comparte_carreras' => 'display#coming_soon', :as => :coming_soon
 
-  match 'hood_ranking' => 'display#hood_ranking', :as => :hood_ranking
+  match 'ranking' => 'display#hood_ranking', :as => :hood_ranking
   
-  match 'terms_and_conditions' => 'display#terms_and_conditions', :as => :terms_and_conditions
+  match 'terminos' => 'display#terms_and_conditions', :as => :terms_and_conditions
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
