@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
-  # :lockable, :timeoutable and :omniauthable
+  # :lockable, :timeoutable and :omniauthable 
   
   MILE_TO_KM = 1.609344
   
@@ -70,8 +70,12 @@ class User < ActiveRecord::Base
     user_last_run = self.last_facebook_run || self.created_at
     runs["data"].each do |run|
       if not Run.find_by_run_id(URI.parse(run["data"]["course"]["url"]).path.split("/").last) and user_last_run < run["publish_time"] 
-        fb_run = Run.new(:user_id => self.id, :run_url => run["data"]["course"]["url"], :run_id => URI.parse(run["data"]["course"]["url"]).path.split("/").last, :kilometers => distance_in_km_for_fb(run["data"]["course"]["title"]), :published_date => run["publish_time"], :start_date =>run["start_time"], :accounted => false)
-        fb_run.save!
+        begin
+          fb_run = Run.new(:user_id => self.id, :run_url => run["data"]["course"]["url"], :run_id => URI.parse(run["data"]["course"]["url"]).path.split("/").last, :kilometers => distance_in_km_for_fb(run["data"]["course"]["title"]), :published_date => run["publish_time"], :start_date =>run["start_time"], :accounted => false)
+          fb_run.save!
+        rescue
+          User.log_user_run self, run
+        end
       end
     end 
     self.update_attribute(:last_facebook_run, Time.now)
@@ -93,8 +97,12 @@ class User < ActiveRecord::Base
         original_url = twitt.attrs[:text].match("(http://.*)[ ]")[1]
         final_url = open(original_url, :allow_redirections => :all).base_uri.path
         if not Run.find_by_run_id(final_url.split("/").last)
-          tw_run = Run.new(:user_id => self.id, :run_url => original_url, :run_id => final_url.split("/").last, :kilometers => distance_in_km_for_tw(twitt.attrs[:text].match("([0-9]*[.,][0-9]*[ ]*)(mi|km)")), :published_date => twitt.attrs[:created_at], :accounted => false)
-          tw_run.save!
+          begin
+            tw_run = Run.new(:user_id => self.id, :run_url => original_url, :run_id => final_url.split("/").last, :kilometers => distance_in_km_for_tw(twitt.attrs[:text].match("([0-9]*[.,][0-9]*[ ]*)(mi|km)")), :published_date => twitt.attrs[:created_at], :accounted => false)
+            tw_run.save!
+          rescue
+            User.log_user_run self, twitt
+          end
         end
       end
     end
@@ -105,8 +113,10 @@ class User < ActiveRecord::Base
     distance = distance_string.split(" ")
     if distance[1] == "miles"
       return distance[0].to_f * MILE_TO_KM
-    else
+    elsif distance[1] == "kilometers"
       return distance[0].to_f
+    else
+      raise distance_string
     end
   end
 
@@ -125,6 +135,18 @@ class User < ActiveRecord::Base
       run.update_attribute(:accounted, true)
      end
     self.update_attribute(:kilometers, (self.kilometers || 0) + km.round(2))
+  end
+
+  def self.runs_logger
+    @@runs_logger ||= Logger.new(File.join(Rails.root, 'log', 'runs_log.log'))
+  end
+
+  def self.log_user_run current_user, run
+    begin
+      User.runs_logger.error("#{Time.now.in_time_zone('Central Time (US & Canada)').to_formatted_s(:short)} user: #{current_user.id}, run: #{run}")
+    rescue
+      logger.error "The custom try_logger is not working."
+    end
   end
 
 end
