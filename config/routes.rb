@@ -36,6 +36,8 @@ TorreCentenario::Application.routes.draw do
   
   match 'terminos' => 'display#terms_and_conditions', :as => :terms_and_conditions
 
+  match 'redirect' => 'display#redirect', :as => :redirect
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

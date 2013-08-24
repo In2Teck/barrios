@@ -26,9 +26,7 @@ function sendInvites() {
   FB.ui({method: 'apprequests',
     message: 'Yo ya estoy corriendo por '+ hood_name +'. Te reto a que corras por tu barrio.',
     exclude_ids: ids
-    }, function(){
-    // termino
-    });
+  });
 }
 
 function loadFB() {

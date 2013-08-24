@@ -1,6 +1,6 @@
 class DisplayController < ApplicationController
   
-  before_filter :authenticate_user!, :except => [:index, :terms_and_conditions, :hood_ranking, :hood_detail]
+  before_filter :authenticate_user!, :except => [:index, :terms_and_conditions, :hood_ranking, :hood_detail, :redirect]
   authorize_resource :class => false
 
 	def index
@@ -31,10 +31,10 @@ class DisplayController < ApplicationController
 
   def profile
     #Before release
-    redirect_to :coming_soon
-    #if not current_user.neighborhood_id
-    #  redirect_to :hood_select
-    #end
+    #redirect_to :coming_soon
+    if not current_user.neighborhood_id
+      redirect_to :hood_select
+    end
   end
 
   def hood_ranking
@@ -53,5 +53,9 @@ class DisplayController < ApplicationController
 
   def terms_and_conditions
 
+  end
+
+  def redirect 
+    redirect_to "/redirect.html"
   end
 end
