@@ -93,17 +93,17 @@ class User < ActiveRecord::Base
   def save_tw_runs
     twitts = self.query_tw
     twitts.each do |twitt|
-      if twitt.attrs[:text].index("#nikeplus") and twitt.attrs[:text].index("http")
-        original_url = twitt.attrs[:text].match("(http://.*)[ ]")[1]
-        final_url = open(original_url, :allow_redirections => :all).base_uri.path
-        if not Run.find_by_run_id(final_url.split("/").last)
-          begin
+      begin
+        if twitt.attrs[:text].index("#nikeplus") and twitt.attrs[:text].index("http")
+          original_url = /(https?:\/\/([-\w\.]+)+(:\d+)?(\/([\w\/_\.]*(\?\S+)?)?)?)/.match(twitt.attrs[:text])[1]
+          final_url = open(original_url, :allow_redirections => :all).base_uri.path
+          if not Run.find_by_run_id(final_url.split("/").last)
             tw_run = Run.new(:user_id => self.id, :run_url => original_url, :run_id => final_url.split("/").last, :kilometers => distance_in_km_for_tw(twitt.attrs[:text].match("([0-9]*[.,][0-9]*[ ]*)(mi|km)")), :published_date => twitt.attrs[:created_at], :accounted => false)
             tw_run.save!
-          rescue
-            User.log_user_run self, twitt
           end
         end
+      rescue
+        User.log_user_run self, twitt.to_yaml      
       end
     end
     self.update_attribute(:last_twitt_id, twitts[0].id) if not twitts.empty?
