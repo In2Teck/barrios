@@ -31,7 +31,7 @@ class DisplayController < ApplicationController
 
   def profile
     #Before release
-      redirect_to :coming_soon
+    #  redirect_to :coming_soon
     #if not current_user.neighborhood_id
     #  redirect_to :hood_select
     #end
