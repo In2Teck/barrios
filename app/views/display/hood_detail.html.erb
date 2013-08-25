@@ -10,7 +10,7 @@
                 <thead>
                   <tr>
                     <th><%=  image_tag(@current_hood.picture_url_big ,:class=>'current_hood_picture')  if @current_hood.picture_url_big %></th>
-                    <th><%=  @current_hood.name %></th>
+                    <th><%= image_tag( @current_hood.picture_url_normal, :class => 'hood_normal_title') if @current_hood.picture_url_normal %></th>
                     <th><div class="center-row"><div class="total-kms"></div><%=  @current_hood.stats[:kilometers] %></div></th>
                   </tr>
                 </thead>
@@ -40,7 +40,7 @@
                 </tbody>
               </table>
 
-              <%= will_paginate @users , :page_links => false, :next_label => '<div class="neon-down pull-right"></div>
+              <%= will_paginate @users , :page_links => false, :next_label => '<div class="neon-down-new pull-right"></div>
 ', :previous_label => '<div class="neon-up-new pull-right"></div>
 '  %>
           </div>
