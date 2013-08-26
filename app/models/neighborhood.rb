@@ -9,7 +9,7 @@ class Neighborhood < ActiveRecord::Base
       hood_total_km += user.kilometers
       hood_total_users += 1
     end
-    return {:kilometers => hood_total_km, :users => hood_total_users}
+    return {:kilometers => hood_total_km.round(2), :users => hood_total_users}
   end
   
   def self.total_stats
