@@ -61,8 +61,12 @@ class User < ActiveRecord::Base
 	end
 
   def query_fb_runs
-    rg = RestGraph.new(:access_token => self.access_token)
-    return rg.get('me/fitness.runs')
+    begin
+      rg = RestGraph.new(:access_token => self.access_token)
+      return rg.get('me/fitness.runs')
+    rescue => error
+      User.log_user_run self, error.backtrace
+    end
   end
 
   def save_fb_runs
@@ -82,12 +86,16 @@ class User < ActiveRecord::Base
   end
 
   def query_tw
-    ut = Twitter::Client.new(
-      :oauth_token => self.oauth_token,
-      :oauth_token_secret => self.oauth_token_secret,
-      :consumer_key => ENV['TWITTER_CONSUMER_KEY'],
-      :consumer_secret => ENV['TWITTER_CONSUMER_SECRET'])
-    return ut.user_timeline(self.twitter_id.to_i, {:count => 200, :since_id => self.last_twitt_id.to_i})
+    begin
+      ut = Twitter::Client.new(
+        :oauth_token => self.oauth_token,
+        :oauth_token_secret => self.oauth_token_secret,
+        :consumer_key => ENV['TWITTER_CONSUMER_KEY'],
+        :consumer_secret => ENV['TWITTER_CONSUMER_SECRET'])
+      return ut.user_timeline(self.twitter_id.to_i, {:count => 200, :since_id => self.last_twitt_id.to_i})
+    rescue => error
+      User.log_user_run self, error.backtrace
+    end
   end
 
   def save_tw_runs
