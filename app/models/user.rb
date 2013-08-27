@@ -65,7 +65,7 @@ class User < ActiveRecord::Base
       rg = RestGraph.new(:access_token => self.access_token)
       return rg.get('me/fitness.runs')
     rescue => error
-      User.log_user_run self, error.backtrace
+      User.log_error self, error
       return nil
     end
   end
@@ -97,7 +97,7 @@ class User < ActiveRecord::Base
         :consumer_secret => ENV['TWITTER_CONSUMER_SECRET'])
       return ut.user_timeline(self.twitter_id.to_i, {:count => 200, :since_id => self.last_twitt_id.to_i})
     rescue => error
-      User.log_user_run self, error.backtrace
+      User.log_error self, error
       return nil
     end
   end
@@ -172,4 +172,11 @@ class User < ActiveRecord::Base
     end
   end
 
+  def self.log_error current_user, error
+    begin
+      User.runs_logger.error("#{Time.now.in_time_zone('Central Time (US & Canada)').to_formatted_s(:short)} user: #{current_user.id}, error: #{error}\n backtrace: #{error.backtrace}")
+    rescue
+      logger.error "The custom try_logger is not working."
+    end
+  end
 end
