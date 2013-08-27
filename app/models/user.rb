@@ -66,19 +66,22 @@ class User < ActiveRecord::Base
       return rg.get('me/fitness.runs')
     rescue => error
       User.log_user_run self, error.backtrace
+      return nil
     end
   end
 
   def save_fb_runs
     runs = self.query_fb_runs
     user_last_run = self.last_facebook_run || self.created_at
-    runs["data"].each do |run|
-      if not Run.find_by_run_id(URI.parse(run["data"]["course"]["url"]).path.split("/").last) and user_last_run < run["publish_time"] 
-        begin
-          fb_run = Run.new(:user_id => self.id, :run_url => run["data"]["course"]["url"], :run_id => URI.parse(run["data"]["course"]["url"]).path.split("/").last, :kilometers => distance_in_km_for_fb(run["data"]["course"]["title"]), :published_date => run["publish_time"], :start_date =>run["start_time"], :accounted => false)
-          fb_run.save!
-        rescue
-          User.log_user_run self, run
+    if runs 
+      runs["data"].each do |run|
+        if not Run.find_by_run_id(URI.parse(run["data"]["course"]["url"]).path.split("/").last) and user_last_run < run["publish_time"] 
+          begin
+            fb_run = Run.new(:user_id => self.id, :run_url => run["data"]["course"]["url"], :run_id => URI.parse(run["data"]["course"]["url"]).path.split("/").last, :kilometers => distance_in_km_for_fb(run["data"]["course"]["title"]), :published_date => run["publish_time"], :start_date =>run["start_time"], :accounted => false)
+            fb_run.save!
+          rescue
+            User.log_user_run self, run
+          end
         end
       end
     end 
@@ -95,23 +98,26 @@ class User < ActiveRecord::Base
       return ut.user_timeline(self.twitter_id.to_i, {:count => 200, :since_id => self.last_twitt_id.to_i})
     rescue => error
       User.log_user_run self, error.backtrace
+      return nil
     end
   end
 
   def save_tw_runs
     twitts = self.query_tw
-    twitts.each do |twitt|
-      begin
-        if twitt.attrs[:text].index("#nikeplus") and twitt.attrs[:text].index("http")
-          original_url = /(https?:\/\/([-\w\.]+)+(:\d+)?(\/([\w\/_\.]*(\?\S+)?)?)?)/.match(twitt.attrs[:text])[1]
-          final_url = open(original_url, :allow_redirections => :all).base_uri.path
-          if not Run.find_by_run_id(final_url.split("/").last)
-            tw_run = Run.new(:user_id => self.id, :run_url => original_url, :run_id => final_url.split("/").last, :kilometers => distance_in_km_for_tw(twitt.attrs[:text].match("([0-9]*[.,][0-9]*[ ]*)(mi|km)")), :published_date => twitt.attrs[:created_at], :accounted => false)
-            tw_run.save!
+    if twitts
+      twitts.each do |twitt|
+        begin
+          if twitt.attrs[:text].index("#nikeplus") and twitt.attrs[:text].index("http")
+            original_url = /(https?:\/\/([-\w\.]+)+(:\d+)?(\/([\w\/_\.]*(\?\S+)?)?)?)/.match(twitt.attrs[:text])[1]
+            final_url = open(original_url, :allow_redirections => :all).base_uri.path
+            if not Run.find_by_run_id(final_url.split("/").last)
+              tw_run = Run.new(:user_id => self.id, :run_url => original_url, :run_id => final_url.split("/").last, :kilometers => distance_in_km_for_tw(twitt.attrs[:text].match("([0-9]*[.,][0-9]*[ ]*)(mi|km)")), :published_date => twitt.attrs[:created_at], :accounted => false)
+              tw_run.save!
+            end
           end
+        rescue
+          User.log_user_run self, twitt.to_yaml      
         end
-      rescue
-        User.log_user_run self, twitt.to_yaml      
       end
     end
     self.update_attribute(:last_twitt_id, twitts[0].id) if not twitts.empty?
