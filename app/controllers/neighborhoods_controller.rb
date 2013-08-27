@@ -92,6 +92,7 @@ class NeighborhoodsController < ApplicationController
 
     respond_to do |format|
       format.json { render json: @neighborhood, :except => [:created_at, :updated_at] }
+      format.xml { render xml: @neighborhood, :except => [:created_at, :updated_at] }
     end
   end
 
@@ -100,6 +101,7 @@ class NeighborhoodsController < ApplicationController
 
     respond_to do |format|
       format.json { render json: @neighborhoods, :except => [:created_at, :updated_at] }
+      format.xml { render xml: @neighborhoods, :except => [:created_at, :updated_at] }
     end
   end
 
