@@ -32,8 +32,11 @@
                   <%= current_user.last_name %><br>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 ">
         	  	    <%= image_tag(current_user.neighborhood.picture_url_big,:class=>'shieldprofile') if current_user.neighborhood.picture_url_big %><br>
+					<div class="hood_reselect text-center">
+						<%= link_to '', :hood_reselect %>
+					</div>
             </div>
         </div>
         <div class="friend-invite text-center">
