@@ -181,7 +181,7 @@ body {
 	margin: 0 auto;
 	display:block;
 }
-.hood_reselect:hover{
+#hood_reselect:hover{
 	background-position: 0 -35px;
 	
 }
