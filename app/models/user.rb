@@ -120,7 +120,7 @@ class User < ActiveRecord::Base
         end
       end
     end
-    self.update_attribute(:last_twitt_id, twitts[0].id) if not twitts.empty?
+    self.update_attribute(:last_twitt_id, twitts[0].id) if (twitts and not twitts.empty?)
   end
 
   def distance_in_km_for_fb distance_string
