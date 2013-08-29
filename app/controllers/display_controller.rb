@@ -22,6 +22,11 @@ class DisplayController < ApplicationController
     end
   end
 
+  def hood_reselect
+    current_user.update_attribute(:neighborhood_id, nil)
+    redirect_to :hood_select
+  end
+
   def twitter_share
     #if it is shared, redirect to profile 
     if current_user.oauth_token

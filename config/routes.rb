@@ -23,6 +23,8 @@ TorreCentenario::Application.routes.draw do
   end
 
   match 'selecciona_barrio' => 'display#hood_select', :as => :hood_select
+  
+  match 'reselecciona_barrio' => 'display#hood_reselect', :as => :hood_reselect
 
   match 'ingresa_twitter' => 'display#twitter_share', :as => :twitter_share
 
