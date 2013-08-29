@@ -166,7 +166,7 @@ body {
 }
 .neon-down-new{
 
-  background-image: url('/assets/neon-left.png');
+  background-image: url('/assets/neon-right.png');
   width: 34px;
   height: 32px;
   background-repeat:no-repeat;
@@ -178,7 +178,7 @@ body {
   background-position: 0 -36px;
 }
 .neon-up-new{
-  background-image: url('/assets/neon-right.png');
+  background-image: url('/assets/neon-left.png');
   width: 34px;
   height: 32px;
   background-repeat:no-repeat;
