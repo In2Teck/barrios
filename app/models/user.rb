@@ -39,8 +39,9 @@ class User < ActiveRecord::Base
         :consumer_key => ENV['TWITTER_CONSUMER_KEY'],
         :consumer_secret => ENV['TWITTER_CONSUMER_SECRET'])
       last_twitt_id = user_twitter.user_timeline[0].id
-
 			signed_in_resource.update_attributes({:twitter_id => auth_hash.uid, :oauth_token => auth_hash.credentials.token, :oauth_token_secret => auth_hash.credentials.secret, :twitter_hash => auth_hash, :last_twitt_id => last_twitt_id})
+    elsif (not user.oauth_token) and (not user.oauth_token_secret) and signed_in_resource
+      signed_in_resource.update_attributes({:oauth_token => auth_hash.credentials.token, :oauth_token_secret => auth_hash.credentials.secret})
 		end
 		user || signed_in_resource
 	end 
@@ -67,7 +68,12 @@ class User < ActiveRecord::Base
       rg = RestGraph.new(:access_token => self.access_token)
       return rg.get('me/fitness.runs')
     rescue => error
-      User.log_error self, error
+      if[458, 460].index(e.error["error"]["error_subcode"])
+        self.update_attribute(:access_token, nil)
+        User.log_parse_error "User #{self.id} without FB permissions or with password changed, needs to log back in"
+      else
+        User.log_error self, error
+      end
       return nil
     end
   end
@@ -99,7 +105,12 @@ class User < ActiveRecord::Base
         :consumer_secret => ENV['TWITTER_CONSUMER_SECRET'])
       return ut.user_timeline(self.twitter_id.to_i, {:count => 200, :since_id => self.last_twitt_id.to_i})
     rescue => error
-      User.log_error self, error
+      if error.message == "Invalid or expired token"
+        self.update_attributes({:oauth_token => nil, :oauth_token_secret => nil})
+        User.log_parse_error "User #{self.id} without invalid TW token, needs to log back in"
+      else
+        User.log_error self, error
+      end
       return nil
     end
   end
