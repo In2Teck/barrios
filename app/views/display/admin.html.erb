@@ -1,0 +1,41 @@
+<div id="usuarios_count" style="padding: 1em;">
+  <p>Usuarios totales: <%= @users_count %></p>
+  <p>Usuarios totales con kilómetros: <%= @users_with_km_count %></p>
+</div>
+
+<div id="users_with_problems" style="padding: 1em;">
+
+  <h2>Usuarios con problemas de FB</h2>
+  <table>
+    <tr>
+      <th>User</th>
+      <th>FB ID</th>
+      <th>Email</th>
+    </tr>
+    <% @users_with_fb_problems.each do |user| %>  
+    <tr>
+      <td><%= user.first_name %> <%= user.last_name %></td>
+      <td><%= user.facebook_id %></td>
+      <td><%= user.email %> </td>
+    </tr>
+    <% end %>
+  </table>
+
+  <br/>
+  <h2>Usuarios con problemas de TW</h2>
+  <table>
+    <tr>
+      <th>User</th>
+      <th>TW ID</th>
+      <th>Email</th>
+    </tr>
+    <% @users_with_fb_problems.each do |user| %>  
+    <tr>
+      <td><%= user.first_name %> <%= user.last_name %></td>
+      <td><%= user.twitter_id %></td>
+      <td><%= user.email %> </td>
+    </tr>
+    <% end %>
+  </table>
+
+</div>

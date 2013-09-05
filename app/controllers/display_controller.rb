@@ -3,6 +3,14 @@ class DisplayController < ApplicationController
   before_filter :authenticate_user!, :except => [:index, :terms_and_conditions, :hood_ranking, :hood_detail, :redirect]
   authorize_resource :class => false
 
+  def admin
+    @users_count = User.all.count
+    @users_with_km_count = User.where("kilometers > 0").count
+    @users_with_fb_problems = User.where("access_token is null")
+    @users_with_tw_problems = User.where("oauth_token is null and oauth_token_secret is null")
+    render :layout => "application"
+  end
+
 	def index
     if current_user
       redirect_to :hood_select
