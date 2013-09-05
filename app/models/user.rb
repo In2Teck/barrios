@@ -21,9 +21,11 @@ class User < ActiveRecord::Base
 
 	def self.find_for_facebook_oauth(auth, signed_in_resource = nil)
 		user = User.where(:email => auth.info.email).first
-		unless user
+		if not user
 			# CHECK FOR NEW/CREATE
 			user = User.create(first_name:auth.info.first_name, last_name:auth.info.last_name, facebook_id:auth.uid, email:auth.info.email, password:Devise.friendly_token[0,20], access_token:auth.credentials.token, facebook_hash:auth, last_facebook_run:Time.now, kilometers:0)
+    elsif not user.access_token
+      user.update_attribute(:access_token, auth.credentials.token)
 		end
 		user
 	end
