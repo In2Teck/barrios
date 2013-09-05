@@ -68,7 +68,7 @@ class User < ActiveRecord::Base
       rg = RestGraph.new(:access_token => self.access_token)
       return rg.get('me/fitness.runs')
     rescue => error
-      if[458, 460].index(error.error["error"]["error_subcode"])
+      if error.error and error.error["error"] and [458, 460].index(error.error["error"]["error_subcode"])
         self.update_attribute(:access_token, nil)
         User.log_parse_error "User #{self.id} without FB permissions or with password changed, needs to log back in"
       else
