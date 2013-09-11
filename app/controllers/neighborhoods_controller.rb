@@ -89,6 +89,7 @@ class NeighborhoodsController < ApplicationController
     stats = @neighborhood.stats
     @neighborhood["total_kilometers"] = stats[:kilometers]
     @neighborhood["total_users"] = stats[:users]
+    @neighborhood["position"] = stats[:position]
 
     respond_to do |format|
       format.json { render json: @neighborhood, :except => [:created_at, :updated_at] }

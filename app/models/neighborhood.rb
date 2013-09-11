@@ -3,6 +3,14 @@ class Neighborhood < ActiveRecord::Base
   has_many :users
 
   def stats
+    total_stats = Neighborhood.where("picture_url_big is not null").total_stats.sort_by{|neigh| [-neigh.total_kilometers, -neigh.total_users]}
+    position = total_stats.index(self)
+    kilometers = total_stats[position]["total_kilometers"]
+    users = total_stats[position]["total_users"]
+    return {:kilometers => kilometers, :users => users, :position => (position + 1)}
+  end
+
+  def ind_stats
     hood_total_km = 0.0
     hood_total_users = 0
     self.users.each do |user|
@@ -15,7 +23,7 @@ class Neighborhood < ActiveRecord::Base
   def self.total_stats
     hoods = Neighborhood.includes(:users) 
     hoods.each do |hood| 
-      stats = hood.stats
+      stats = hood.ind_stats
       hood["total_kilometers"] = stats[:kilometers]
       hood["total_users"] = stats[:users]
     end
