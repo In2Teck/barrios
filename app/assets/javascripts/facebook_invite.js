@@ -2,9 +2,12 @@ $(document).on("ready", init);
 
 function init(){
   $("#invite-friends").on("click", sendInvites); 
+    $(".share-facebook").on("click", shareFacebook); 
+
   loadFB();
   ids = getFriendsParticipating(app_key, access_token);
 }
+
 
 function getFriendsParticipating(app_key, access_token){
   ids = [];
@@ -21,6 +24,8 @@ function getFriendsParticipating(app_key, access_token){
   });
   return ids;
 }
+
+
 
 function sendInvites() {
   FB.ui({method: 'apprequests',

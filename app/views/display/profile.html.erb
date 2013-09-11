@@ -43,7 +43,7 @@
         <div class="friend-invite text-center">
 	
 		   <div class="shares-social">
-		          <a href=" http://www.facebook.com/sharer.php?s=100&p[title]=Nike Run - Corro por mi barrio &p[summary]=Yo corro por <%= current_user.neighborhood.name %>. ¿Tú por qué barrio corres? %23justdoit&p[url]=http://www.nike.com/justdoit&p[images][0]=http://werunmexico.com/assets/<%= current_user.neighborhood.picture_url_thumb %>" target="_blank" onclick="return !window.open(this.href, 'Facebook', 'width=640,height=300')"><div class="share-facebook"></div></a>
+		         <div class="share-facebook"></div>
 		          <a  href="https://twitter.com/intent/tweet?text=Yo corro por <%= current_user.neighborhood.name %>. ¿Tú por qué barrio corres? %23justdoit &url=http://www.nike.com/justdoit"><div class="share-twitter"></div> </a>
 		      </div>
             Amigos que también están corriendo por su barrio
@@ -61,4 +61,16 @@
   var app_key = '<%= ENV['FACEBOOK_APP_KEY'] %>';
   var access_token = '<%= current_user.access_token %>';
   var hood_name = '<%= current_user.neighborhood.name %>';
+</script>
+
+<script type="text/javascript">
+function shareFacebook() {
+   FB.ui({
+    method: 'feed',
+    link: 'http://www.nike.com/justdoit',
+    picture: 'http://werunmexico.com/assets/<%= current_user.neighborhood.picture_url_thumb %>',
+    name: 'Nike Run - Corro por mi barrio',
+    description: 'Yo corro por <%= current_user.neighborhood.name %>. ¿Tú por qué barrio corres? '
+  }, function(response){})
+}
 </script>
