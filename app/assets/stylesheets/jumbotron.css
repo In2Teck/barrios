@@ -185,6 +185,18 @@ body {
 	background-position: 0 -35px;
 	
 }
+#cerrar-sesion{
+  background-image: url('/assets/cerrar-sesion.png');
+  width:110px;
+  height: 27px;
+  background-size: 100%;
+  margin: 0 auto;
+  display:block;
+}
+#cerrar-sesion:hover{
+  background-position: 0 -35px;
+  
+}
 .neon-down-new:hover{
   background-position: 0 -36px;
 }
