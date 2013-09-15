@@ -35,6 +35,18 @@ class DisplayController < ApplicationController
     redirect_to :hood_select
   end
 
+  def confirm_attendance 
+    current_user.update_attribute(:attendee, true)
+    #send email
+    redirect_to :profile
+  end
+
+  def race_invite
+    if current_user.attendee
+      redirect_to :profile
+    end
+  end
+
   def twitter_share
     #if it is shared, redirect to profile 
     if current_user.oauth_token

@@ -26,6 +26,10 @@ TorreCentenario::Application.routes.draw do
   
   match 'reselecciona_barrio' => 'display#hood_reselect', :as => :hood_reselect
 
+  match 'confirma_asistencia' => 'display#confirm_attendance', :as => :confirm_attendance
+
+  match 'invitacion_carrera' => 'display#race_invite', :as => :race_invite
+
   match 'ingresa_twitter' => 'display#twitter_share', :as => :twitter_share
 
   match 'perfil' => 'display#profile', :as => :profile
