@@ -31,7 +31,7 @@
   					<% @users.each_with_index do |user,i|%>
                     <tr>
                       <td><%= i+1+@users.offset%></td>
-                      <% if current_user.role? :influencer %>
+                      <% if current_user and current_user.role? :influencer %>
                         <td><%= image_tag("http://graph.facebook.com/"+user.facebook_id+"/picture" ,:class=> 'fbimage') %></td>
                         <td><%= user.first_name %></td>
                       <% else %>
