@@ -4,6 +4,7 @@ TorreCentenario::Application.routes.draw do
   resources :neighborhoods do
     match 'total_stats', :on => :collection
     match 'stats'
+    match 'add_kilometers'
   end
 
   resources :roles

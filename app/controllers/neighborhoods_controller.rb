@@ -1,6 +1,6 @@
 class NeighborhoodsController < ApplicationController
 
-  load_and_authorize_resource :except => [:stats, :total_stats]
+  load_and_authorize_resource :except => [:stats, :total_stats, :add_kilometers]
 
   # GET /neighborhoods
   # GET /neighborhoods.json
@@ -106,4 +106,17 @@ class NeighborhoodsController < ApplicationController
     end
   end
 
+  def add_kilometers
+    @kilometers = params[:kilometers].to_f
+    @neighborhood = Neighborhood.find(params[:neighborhood_id])
+    @user = User.find(User.joins(:roles).where("roles.name = 'external' and neighborhood_id = ?", @neighborhood.id).first.id)
+    
+    @user.update_attribute(:kilometers, @user.kilometers + @kilometers.round(2))
+    
+    respond_to do |format|
+      format.json { render json: @user, :except => [:created_at, :updated_at] }
+      format.xml { render xml: @user, :except => [:created_at, :updated_at], :skip_types => true, :camelize => true }
+    end
+  end
+  
 end

@@ -31,8 +31,11 @@
   					<% @users.each_with_index do |user,i|%>
                     <tr>
                       <td><%= i+1+@users.offset%></td>
-                      <% if current_user and current_user.role? :influencer %>
+                      <% if user.role? :influencer %>
                         <td><%= image_tag("http://graph.facebook.com/"+user.facebook_id+"/picture" ,:class=> 'fbimage') %></td>
+                        <td><%= user.first_name %></td>
+                      <% elsif user.role? :external %>
+                        <td></td>
                         <td><%= user.first_name %></td>
                       <% else %>
                         <td><%= link_to image_tag("http://graph.facebook.com/"+user.facebook_id+"/picture" ,:class=> 'fbimage'), "http://facebook.com/" + user.facebook_id, :class => 'linkbarrio', :target => "_blank" %></td>
