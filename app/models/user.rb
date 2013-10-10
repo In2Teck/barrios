@@ -19,6 +19,25 @@ class User < ActiveRecord::Base
 
   #validates_presence_of :email, :password
 
+  def self.create_user_externally(first_name, last_name, email, uid, token, neighborhood_id, hash)
+    user = User.where(:email => email).first
+		if not user
+			# CHECK FOR NEW/CREATE
+			user = User.create(first_name:first_name, last_name:last_name, facebook_id:uid, email:email, password:Devise.friendly_token[0,20], access_token:token, facebook_hash:hash, last_facebook_run:Time.now, kilometers:0, neighborhood_id:neighborhood_id)
+    elsif not user.access_token
+      user.update_attribute(:access_token, token)
+		end
+		user
+  end
+
+  def self.add_kilometers_externally(uid, kilometers)
+    user = User.where(:facebook_id => uid).first
+    if user
+      user.update_attribute(:kilometers, user.kilometers + kilometers.to_f)
+    end
+    user
+  end
+
 	def self.find_for_facebook_oauth(auth, signed_in_resource = nil)
 		user = User.where(:email => auth.info.email).first
 		if not user

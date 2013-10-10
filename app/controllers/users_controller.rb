@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   before_filter :authenticate_user!, :only => [:update_hood]
-  load_and_authorize_resource :except => [:update_runs]
+  load_and_authorize_resource :except => [:update_runs, :create_user_externally, :add_kilometers_externally]
 
   # GET /users
   # GET /users.json
@@ -99,6 +99,22 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to :twitter_share}
       format.json { render json: @user }
+    end
+  end
+  
+  def create_user_externally
+    @user = User.create_user_externally params[:first_name], params[:last_name], params[:email], params[:uid], params[:token], params[:neighborhood_id], params
+    respond_to do |format|
+      format.json { render json: @user }
+      format.xml { render xml: @user }
+    end
+  end
+
+  def add_kilometers_externally
+    @user = User.add_kilometers_externally params[:uid], params[:kilometers]
+    respond_to do |format|
+      format.json { render json: @user }
+      format.xml { render xml: @user }
     end
   end
 

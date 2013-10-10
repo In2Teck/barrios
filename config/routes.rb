@@ -21,6 +21,8 @@ TorreCentenario::Application.routes.draw do
   resources :users do
     match 'update_runs', :on => :collection
     match 'update_hood', :on => :collection
+    match 'create_user_externally', :on => :collection
+    match 'add_kilometers_externally', :on => :collection
   end
 
   match 'selecciona_barrio' => 'display#hood_select', :as => :hood_select
