@@ -18,6 +18,16 @@ class User < ActiveRecord::Base
   belongs_to :neighborhood
 
   #validates_presence_of :email, :password
+  
+  def self.to_csv(options = {})
+    CSV.generate(options) do |csv|
+    sel_col_names = column_names.select{|column| ['id', 'first_name', 'last_name', 'email', 'facebook_id'].include? column}
+    csv << sel_col_names
+      all.each do |user|
+        csv << user.attributes.values_at(*sel_col_names)
+      end
+    end
+  end
 
   def self.create_user_externally(first_name, last_name, email, uid, token, neighborhood_id, hash)
     user = User.where(:email => email).first

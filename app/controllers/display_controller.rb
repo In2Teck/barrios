@@ -11,9 +11,17 @@ class DisplayController < ApplicationController
     render :layout => "application"
   end
 
+  def print_attendees
+    @users = User.where("attendee = ?", true)
+    render :layout => "application"
+  end
+
   def csv
     @users = User.where("attendee = ?", true)
-    
+    respond_to do |format|
+      format.csv { send_data @users.to_csv }
+      format.xls
+    end 
   end
 
 	def index

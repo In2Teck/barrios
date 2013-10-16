@@ -9,6 +9,7 @@ class Ability
 		  can :manage, :display
       cannot :admin, :display
       cannot :csv, :display
+      cannot :print_attendees, :display
       can :update_hood, User 
 	  end
   end

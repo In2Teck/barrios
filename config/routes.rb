@@ -55,6 +55,8 @@ TorreCentenario::Application.routes.draw do
   
   match 'csv' => 'display#csv', :as => :csv
 
+  match 'registrados' => 'display#print_attendees', :as => :print_attendees
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
