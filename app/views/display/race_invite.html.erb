@@ -6,5 +6,18 @@
 <% content_for :head_script do %>
   <%= javascript_include_tag 'confirm_attendance' %>
 <% end %>
-<%= check_box_tag 'Acepto', 1, false, :id => "acepto_checkbox"%>
-<%= link_to "Confirm Attendance", "#", :onclick => "confirm_attendance('#{confirm_attendance_url}')" %>
+    
+<div class=" container text-center back-muertos">
+	<div id="contentmuertos">
+
+	<div class="termsok">
+		<%= check_box_tag 'Acepto', 1, false, :id => "acepto_checkbox"%>
+
+		Acepto términos y condiciones.
+	</div>
+	<div id="inscricontainer">
+		<%= link_to "", "#",:class=>'inscribete', :onclick => "confirm_attendance('#{confirm_attendance_url}')" %>
+	</div>
+
+	</div>
+</div>

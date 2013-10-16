@@ -127,7 +127,43 @@ body {
   display: table;
   height: 90vh;
 }
+.back-muertos{
+  background-image: url('/assets/calavera.png');
+  max-width: 600px;
+  margin: auto;
+  height: 1300px;
+  background-repeat: no-repeat;
+  background-position: 0 -20px;
 
+
+}
+#contentmuertos{
+  margin-top: 710px;
+
+}
+.termsok{
+  font-family: 'Conv_FuturaStd-MediumCondensed',Sans-Serif;
+  text-transform: uppercase;
+  word-spacing: 2px;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  text-decoration: underline;
+
+}
+.inscribete{
+
+background-image: url('/assets/inscribete.png');
+width:150px;
+height: 35px;
+background-size: 100%;
+float: right;
+float:left;
+margin-left: 235px;
+}
+.inscribete:hover{
+background-position: 0 -45px;
+
+}
 .neon-down{
 
   background-image: url('/assets/btn-a.png');
