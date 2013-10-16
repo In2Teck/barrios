@@ -1,0 +1,36 @@
+<% content_for :head_style do %>
+  <%= stylesheet_link_tag 'bootstrap-3' %>
+  <%= stylesheet_link_tag 'jumbotron' %>  
+  <%= stylesheet_link_tag 'header' %>
+<% end %> 
+<% content_for :head_script do %>
+  <%= javascript_include_tag 'confirm_attendance' %>
+<% end %>
+    
+<div class=" container text-center back-muertos-print">
+  <div id="contentmuertos">
+          <%= link_to "", "#" ,:class=>"    imprimereg", :onclick => "printweb();" %>
+
+      <%= link_to "", :register_muertos ,:class=>"descarganike", %>
+
+  </div>
+</div>
+<script type="text/javascript">
+function printweb(){
+ var mywindow = window.open('', 'my div', 'height=500,width=660');
+        mywindow.document.write('<html><head><title>Registro Reto Día de Muertos</title>');
+                mywindow.document.write('<img src="/assets/registro.png" style="width: 640px; height:1300px;"/>');
+                mywindow.document.write('<div style="position:absolute;font-family: Arial;font-size: 50px; color:green; top:680px; left:270px;">1300</div>');
+
+        mywindow.print();
+
+}
+</script>
+<style type="text/css">
+.o{
+
+  font-family: Arial;
+  font-size: 30px;
+  font-color:green;
+}
+</style>

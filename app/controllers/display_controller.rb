@@ -38,7 +38,7 @@ class DisplayController < ApplicationController
   def confirm_attendance 
     current_user.update_attribute(:attendee, true)
     #send email
-    redirect_to :profile
+    redirect_to :print_screen
   end
 
   def race_invite

@@ -24,6 +24,10 @@ TorreCentenario::Application.routes.draw do
     match 'create_user_externally', :on => :collection
     match 'add_kilometers_externally', :on => :collection
   end
+  match 'imprimir_invitacion' => 'display#print_screen', :as => :print_screen
+
+  match 'registro-datos' => 'display#register_muertos', :as => :register_muertos
+
 
   match 'selecciona_barrio' => 'display#hood_select', :as => :hood_select
   

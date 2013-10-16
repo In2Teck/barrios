@@ -137,6 +137,38 @@ body {
 
 
 }
+.back-muertos-print{
+  background-image: url('/assets/print.png');
+  max-width: 600px;
+  margin: auto;
+  height: 1300px;
+  background-repeat: no-repeat;
+  background-position: 0 -20px;
+
+
+}
+.descarganike{
+
+background-image: url('/assets/descarga-plus.png');
+width:150px;
+height: 35px;
+background-size: 100%;
+float: left;
+margin-left: 230px;
+
+}
+.imprimereg{
+
+background-image: url('/assets/boton_imprimir.png');
+width:150px;
+height: 35px;
+background-size: 100%;
+float: left;
+margin-left: 230px;
+
+}
+
+
 #contentmuertos{
   margin-top: 710px;
 
