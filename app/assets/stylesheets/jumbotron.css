@@ -237,15 +237,16 @@ background-position: 0 -45px;
 
 #misionmuertos{
   background-image: url('/assets/mision-muertos.png');
+  background-position: 0 0;
 width: 200px;
-height: 47px;
+height: 40px;
 background-size: 100%;
 margin: 0 auto;
 display: block;
 
 }
 #misionmuertos:hover{
-    background-position: 0 -42px;
+    background-position: 0 -49px;
 
 }
 .neon-down-new{
