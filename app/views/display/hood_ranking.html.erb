@@ -26,7 +26,7 @@
                       <td><%= i+1 %></td>
                       <td><%= link_to image_tag(neighborhood.picture_url_big,:class=>"rankingbarrios") , hood_detail_path(neighborhood.id), :class => 'linkbarrio' %></td>
                       <td><%= link_to neighborhood.name, hood_detail_path(neighborhood.id), :class => 'linkbarrio' %></td>
-                      <td><%= neighborhood["total_kilometers"] %></td>
+                      <td><%= neighborhood["total_kilometers"].to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse %></td>
                       <!-- <td><%= neighborhood["total_users"] %></td> -->
                     </tr>
                   <% end %>
@@ -34,7 +34,3 @@
               </table>
           </div>
       </div>
-
-
-                   
-            
