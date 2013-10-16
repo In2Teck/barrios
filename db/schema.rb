@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130914222807) do
+ActiveRecord::Schema.define(:version => 20131016175952) do
 
   create_table "neighborhoods", :force => true do |t|
     t.string   "name"
@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(:version => 20130914222807) do
     t.integer  "neighborhood_id"
     t.float    "kilometers"
     t.boolean  "attendee",               :default => false
+    t.integer  "register_number",        :default => 0
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

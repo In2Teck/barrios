@@ -206,6 +206,8 @@ background-position: 0 -45px;
   margin:0 auto;
 }
 
+
+
 .neon-down:hover{
     background-image: url('/assets/btn-a-on.png');
     cursor: pointer;
@@ -231,6 +233,20 @@ background-position: 0 -45px;
 }
 .corre-btn:hover{
   background-position: 0 -55px;
+}
+
+#misionmuertos{
+  background-image: url('/assets/mision-muertos.png');
+width: 200px;
+height: 47px;
+background-size: 100%;
+margin: 0 auto;
+display: block;
+
+}
+#misionmuertos:hover{
+    background-position: 0 -42px;
+
 }
 .neon-down-new{
 
