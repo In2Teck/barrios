@@ -24,6 +24,7 @@ TorreCentenario::Application.routes.draw do
     match 'create_user_externally', :on => :collection
     match 'add_kilometers_externally', :on => :collection
   end
+
   match 'imprimir_invitacion' => 'display#print_screen', :as => :print_screen
 
   match 'registro_datos' => 'display#register_muertos', :as => :register_muertos
@@ -34,7 +35,7 @@ TorreCentenario::Application.routes.draw do
 
   match 'confirma_asistencia' => 'display#confirm_attendance', :as => :confirm_attendance
 
-  match 'invitacion_carrera' => 'display#race_invite', :as => :race_invite
+  match 'reto-dia-de-muertos' => 'display#race_invite', :as => :race_invite
 
   match 'ingresa_twitter' => 'display#twitter_share', :as => :twitter_share
 
