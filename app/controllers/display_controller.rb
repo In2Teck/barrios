@@ -24,6 +24,14 @@ class DisplayController < ApplicationController
     end 
   end
 
+  def csv_all_users
+    @users = User.all
+    respond_to do |format|
+      format.csv { send_data @users.to_csv }
+      format.xls
+    end
+  end
+
 	def index
     if current_user
       redirect_to :hood_select

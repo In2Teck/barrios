@@ -54,6 +54,8 @@ TorreCentenario::Application.routes.draw do
   match 'admin' => 'display#admin', :as => :admin
   
   match 'csv' => 'display#csv', :as => :csv
+  
+  match 'csv_all_users' => 'display#csv_all_users', :as => :csv_all_users
 
   match 'registrados' => 'display#print_attendees', :as => :print_attendees
 
