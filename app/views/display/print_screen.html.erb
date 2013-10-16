@@ -11,7 +11,7 @@
   <div id="contentmuertos">
           <%= link_to "", "#" ,:class=>"    imprimereg", :onclick => "printweb();" %>
 
-      <%= link_to "", "https://itunes.apple.com/mx/app/nike+-running/id387771637?mt=8" ,:class=>"descarganike" %>
+          <%= link_to "", "https://itunes.apple.com/mx/app/nike+-running/id387771637?mt=8" ,:class=>"descarganike", :target=>"_blank" %>
 
   </div>
 </div>
@@ -20,7 +20,7 @@ function printweb(){
  var mywindow = window.open('', 'my div', 'height=500,width=660');
         mywindow.document.write('<html><head><title>Registro Reto Día de Muertos</title>');
                 mywindow.document.write('<img src="/assets/registro.png" style="width: 640px; height:1300px;"/>');
-                mywindow.document.write('<div style="position:absolute;font-family: Arial;font-size: 50px; color:green; top:680px; left:270px;"><%= current_user.id %></div>');
+                mywindow.document.write('<div style="position:absolute;font-family: Arial;font-size: 50px; color:green; top:680px; left:270px;"><%= "%05d" % current_user.id %></div>');
 
         mywindow.print();
 
