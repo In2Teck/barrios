@@ -49,14 +49,26 @@ class DisplayController < ApplicationController
   end
 
   def confirm_attendance 
-    current_user.update_attribute(:attendee, true)
-    #send email
-    redirect_to :print_screen
+    if (not current_user.attendee) and User.maximum("register_number") <= 1501
+      current_user.update_attribute(:attendee, true)
+      current_user.update_attribute(:register_number, User.maximum("register_number") + 1)
+      #send email
+      redirect_to :print_screen
+    else
+      logger.error ("no hay cupo ya")
+      redirect_to :profile
+    end
   end
 
   def print_screen
     if not current_user.attendee
-      redirect_to :race_invite
+      if User.maximum("register_number") >= 1501 
+        # redirect to NO HAY CUPO
+        logger.error ("no hay cupo ya")
+        redirect_to :profile
+      else
+        redirect_to :race_invite
+      end
     end
   end
 
