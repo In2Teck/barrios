@@ -11,6 +11,11 @@ class DisplayController < ApplicationController
     render :layout => "application"
   end
 
+  def csv
+    @users = User.where("attendee = ?", true)
+    
+  end
+
 	def index
     if current_user
       redirect_to :hood_select
@@ -41,9 +46,15 @@ class DisplayController < ApplicationController
     redirect_to :print_screen
   end
 
+  def print_screen
+    if not current_user.attendee
+      redirect_to :race_invite
+    end
+  end
+
   def race_invite
     if current_user.attendee
-      redirect_to :profile
+      redirect_to :print_screen
     end
   end
 

@@ -26,8 +26,7 @@ TorreCentenario::Application.routes.draw do
   end
   match 'imprimir_invitacion' => 'display#print_screen', :as => :print_screen
 
-  match 'registro-datos' => 'display#register_muertos', :as => :register_muertos
-
+  match 'registro_datos' => 'display#register_muertos', :as => :register_muertos
 
   match 'selecciona_barrio' => 'display#hood_select', :as => :hood_select
   
@@ -52,6 +51,8 @@ TorreCentenario::Application.routes.draw do
   match 'redirect' => 'display#redirect', :as => :redirect
   
   match 'admin' => 'display#admin', :as => :admin
+  
+  match 'csv' => 'display#csv', :as => :csv
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

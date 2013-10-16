@@ -8,6 +8,7 @@ class Ability
 	  else
 		  can :manage, :display
       cannot :admin, :display
+      cannot :csv, :display
       can :update_hood, User 
 	  end
   end
