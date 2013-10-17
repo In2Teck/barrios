@@ -37,6 +37,8 @@ TorreCentenario::Application.routes.draw do
 
   match 'reto-dia-de-muertos' => 'display#race_invite', :as => :race_invite
 
+  match 'registro_cerrado' => 'display#closed_registration', :as => :closed_registration
+
   match 'ingresa_twitter' => 'display#twitter_share', :as => :twitter_share
 
   match 'perfil' => 'display#profile', :as => :profile

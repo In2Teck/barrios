@@ -11,6 +11,10 @@ class DisplayController < ApplicationController
     render :layout => "application"
   end
 
+  def closed_registration
+  
+  end
+
   def print_attendees
     @users = User.where("attendee = ?", true)
     render :layout => "application"
@@ -64,7 +68,7 @@ class DisplayController < ApplicationController
       redirect_to :print_screen
     else
       logger.error ("no hay cupo ya")
-      redirect_to :profile
+      redirect_to :closed_registration
     end
   end
 
@@ -73,7 +77,7 @@ class DisplayController < ApplicationController
       if User.maximum("register_number") >= 1501 
         # redirect to NO HAY CUPO
         logger.error ("no hay cupo ya")
-        redirect_to :profile
+        redirect_to :closed_registration
       else
         redirect_to :race_invite
       end
