@@ -7,7 +7,7 @@
   <Worksheet ss:Name="Sheet1">
     <Table>
       <Row>
-        <Cell><Data ss:Type="String">ID</Data></Cell>
+        <Cell><Data ss:Type="String">Register Number</Data></Cell>
         <Cell><Data ss:Type="String">Facebook ID</Data></Cell>
         <Cell><Data ss:Type="String">First Name</Data></Cell>
         <Cell><Data ss:Type="String">Last Name</Data></Cell>
@@ -15,7 +15,7 @@
       </Row>
     <% @users.each do |user| %>
       <Row>
-        <Cell><Data ss:Type="Number"><%= user.id %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= user.register_number %></Data></Cell>
         <Cell><Data ss:Type="String"><%= user.facebook_id %></Data></Cell>
         <Cell><Data ss:Type="String"><%= user.first_name %></Data></Cell>
         <Cell><Data ss:Type="String"><%= user.last_name %></Data></Cell>
