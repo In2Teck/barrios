@@ -61,7 +61,7 @@ class DisplayController < ApplicationController
   end
 
   def confirm_attendance 
-    if (not current_user.attendee) and User.maximum("register_number") <= 1501
+    if (not current_user.attendee) and User.maximum("register_number") <= 1201
       current_user.update_attribute(:attendee, true)
       current_user.update_attribute(:register_number, User.maximum("register_number") + 1)
       #send email
@@ -74,7 +74,7 @@ class DisplayController < ApplicationController
 
   def print_screen
     if not current_user.attendee
-      if User.maximum("register_number") >= 1501 
+      if User.maximum("register_number") >= 1201 
         # redirect to NO HAY CUPO
         logger.error ("no hay cupo ya")
         redirect_to :closed_registration
