@@ -17,8 +17,28 @@ class User < ActiveRecord::Base
   has_many :twitter_runs
   belongs_to :neighborhood
 
+  after_create :verify_external_role_for_users_without_email
+
   #validates_presence_of :email, :password
   
+  def verify_external_role_for_users_without_email
+    if (not (self.email and self.password) and not self.role? :external)
+      raise 'Usuario sin email y sin password que aparte no tiene rol externo'
+    end
+  end
+
+  def password_required?
+    false
+  end
+
+  def email_required?
+    false
+  end
+
+  def email_changed?
+    false
+  end
+
   def self.to_csv(options = {})
     CSV.generate(options) do |csv|
     sel_col_names = column_names.select{|column| ['id', 'register_number', 'first_name', 'last_name', 'email', 'facebook_id'].include? column}
@@ -54,7 +74,11 @@ class User < ActiveRecord::Base
 			# CHECK FOR NEW/CREATE
 			user = User.create(first_name:auth.info.first_name, last_name:auth.info.last_name, facebook_id:auth.uid, email:auth.info.email, password:Devise.friendly_token[0,20], access_token:auth.credentials.token, facebook_hash:auth, last_facebook_run:Time.now, kilometers:0)
     elsif (not user.access_token) or (user.access_token != auth.credentials.token)
-      user.update_attribute(:access_token, auth.credentials.token)
+      if user.encrypted_password.blank?
+        user.update_attributes(:first_name => auth.info.first_name, :last_name => auth.info.last_name, :facebook_id => auth.uid, :password => Devise.friendly_token[0,20], :access_token => auth.credentials.token, :facebook_hash => auth, :last_facebook_run => Time.now)
+      else
+        user.update_attribute(:access_token, auth.credentials.token)
+      end
 		end
 		user
 	end
@@ -221,4 +245,5 @@ class User < ActiveRecord::Base
       logger.error "The custom try_logger is not working."
     end
   end
+  
 end
