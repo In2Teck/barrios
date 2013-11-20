@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-ENV['RAILS_ENV'] = "production"
+ENV['RAILS_ENV'] = "development"
 require File.dirname(__FILE__) + "/../config/environment"
 require 'csv'
 
@@ -28,7 +28,7 @@ csv.each do |row|
 
   begin
 
-    email = user_hash["Email"]
+    email = user_hash["Email"] || "no tiene"
     first_name, last_name = get_name(user_hash["Nombre"].split(" "))
     km = user_hash["km"].to_f
     hood_id = Neighborhood.find_by_name(user_hash["Barrio"]).id
