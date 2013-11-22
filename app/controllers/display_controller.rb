@@ -21,7 +21,7 @@ class DisplayController < ApplicationController
   end
 
   def csv
-    @users = User.where("attendee = ?", true)
+    @users = User.where("kilometers > ?", 99)
     respond_to do |format|
       format.csv { send_data @users.to_csv }
       format.xls
