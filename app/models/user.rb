@@ -51,10 +51,9 @@ class User < ActiveRecord::Base
 
   def self.to_csv_all_users(options = {})
     CSV.generate(options) do |csv|
-    sel_col_names = column_names.select{|column| ['id', 'facebook_id', 'first_name', 'last_name', 'email', 'kilometers', 'neighborhood_id', 'neighborhood.name'].include? column}
+    sel_col_names = column_names.select{|column| ['id', 'facebook_id', 'first_name', 'last_name', 'email', 'kilometers', 'neighborhood_id'].include? column}
     csv << sel_col_names
       all.each do |user|
-        user["neighborhood.name"] = user['neighborhood_id']
         csv << user.attributes.values_at(*sel_col_names)
       end
     end
