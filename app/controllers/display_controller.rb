@@ -31,7 +31,7 @@ class DisplayController < ApplicationController
   def csv_all_users
     @users = User.all
     respond_to do |format|
-      format.csv { send_data @users.to_csv }
+      format.csv { send_data @users.to_csv_all_users }
       format.xls
     end
   end
