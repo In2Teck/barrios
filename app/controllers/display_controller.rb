@@ -29,7 +29,7 @@ class DisplayController < ApplicationController
   end
 
   def csv_all_users
-    @users = User.where("id > 0")
+    @users = User.includes(:neighborhood).where("kilometers > 99")
     respond_to do |format|
       format.csv { send_data @users.to_csv_all_users }
       format.xls
