@@ -54,7 +54,7 @@ class User < ActiveRecord::Base
     sel_col_names = column_names.select{|column| ['id', 'facebook_id', 'first_name', 'last_name', 'email', 'kilometers', 'neighborhood.name'].include? column}
     csv << sel_col_names
       all.each do |user|
-        user["neighborhood.name"] = Neighborhood.find(user.neighborhood_id).name
+        user["neighborhood.name"] = Neighborhood.find(user.attributes.values_at('neighborhood_id')).name
         csv << user.attributes.values_at(*sel_col_names)
       end
     end
